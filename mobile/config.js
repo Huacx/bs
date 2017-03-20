@@ -1,0 +1,21 @@
+var app = angular.module('myapp',['ui.router']);
+app.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRouterProvider){
+	$urlRouterProvider.otherwise('/home');
+	$stateProvider.state('home',{
+		url:'/home',
+		templateUrl:'../views/homeView.html',
+		controller:'homeViewController'
+	}).state('homeWork',{
+		url:'/homeWork',
+		templateUrl:'../views/tipView.html',
+		controller:'tipViewController'
+	}).state('inform',{
+		url:'/inform',
+		templateUrl:'../views/informView.html',
+		controller:'informViewController'
+	}).state('me',{
+		url:'/me',
+		templateUrl:'../views/meView.html',
+		controller:'meViewController'
+	})
+}])

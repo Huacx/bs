@@ -1,0 +1,65 @@
+body {
+	height: 17.75rem;
+    padding-top: 3.125rem;
+    text-align: center;
+    box-sizing: border-box;
+    position: relative;
+    background-image: url(../images/timg.jpg);
+    background-size: 100% 100%;
+    h1 {
+        text-align: center;
+        margin-bottom: 1.562rem;
+        color: #1E87F6;
+        font-size: 1rem;
+    }
+    div {
+        width: 6.25rem;
+        box-sizing: border-box;
+        margin: 0px auto;
+        >input {
+            width: 6.25rem;
+            height: 0.938rem;
+            line-height: 0.938rem;
+            border: 0.016rem solid gray;
+            font-size: 0.375rem;
+            border-radius: 0.078rem;
+            padding-left: 0.156rem;
+        }
+        >div {
+            height: 0.781rem;
+            line-height: 0.781rem;
+            .error-tip {
+                color: red;
+                text-align: left;
+                font-size: 0.5rem;
+            }
+        }
+        label{
+        	margin-right: 0.156rem;
+        	line-height: 0.5rem;
+        	font-size: 0.5rem;
+        	text-align: left;
+        	input{
+        	margin-bottom: 0.469rem;
+        		width: 0.5rem;
+        		height: 0.5rem;
+        		font-size: 0.5rem;
+        	}
+        }
+    }
+    button{
+    	width: 5.469rem;
+    	height: 1.25rem;
+    	line-height: 0.938rem;
+    	border:none;
+    	border-radius: 0.156rem;
+    	margin-top: 0.781rem;
+        font-size: 0.625rem;
+    	&.active{
+    		background-color: lightblue;
+    	}
+    	&:focus{
+    		outline: none;
+    	}
+    }
+}

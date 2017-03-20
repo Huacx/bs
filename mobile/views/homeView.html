@@ -1,0 +1,8 @@
+<ul class="state clear">
+	<li class="start" ng-click='tab(0)' ng-class='{true:"active",false:""}[st==0]'>未完成</li>
+	<li ng-click='tab(1)' ng-class='{true:"active",false:""}[st==1]'>已完成</li>
+</ul>
+<ul class="homecontent">
+	<li ng-show='st==0' >未完成的作业列表</li>
+	<li ng-show='st==1' >已完成的作业列表</li>
+</ul>

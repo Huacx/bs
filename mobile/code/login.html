@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">  <title></title>
+    <title>作业管理系统</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <!-- <link rel="stylesheet" type="text/css" href="../dest/main.css"> -->
+    <link rel="stylesheet" type="text/css" href="../css/global.css">
+    <link rel="stylesheet" type="text/css" href="../css/login.css">
+</head>
+
+<body>
+	<h1>作业管理系统</h1>
+    <form ng-model='loginform' name='loginform' novalidate>
+        <div class="username-group">
+            <input type="number" id="username" name="username" ng-model='username' placeholder="请输入账号" required ng-pattern='/^(201)\d{9}$/' maxlength="12">
+            <div>
+                <div class="error-tip" ng-show='loginform.username.$dirty && loginform.username.$error.required'>请输入账号</div>
+                <div class="error-tip" ng-show='loginform.username.$dirty && loginform.username.$error.pattern'>账号格式不正确</div>
+            </div>
+        </div>
+        <div class="pwd-group">
+            <input type="password" name="password" id="password" ng-model='password' placeholder="请输入密码" required minlength="6">
+            <div>
+                <div class="error-tip" ng-show='loginform.password.$dirty && loginform.password.$error.required'>请输入密码！</div>
+                <div class="error-tip" ng-show='loginform.password.$dirty && loginform.password.$error.minlength'>请输入大于六位的密码</div>
+            </div>
+        </div>
+        <div class="remember">
+        	<label><input type="checkbox">记住我</label>
+        </div>
+        <div class="status">
+        	<label><input type="radio"  name="status" value="1" checked>教师登录</label>
+        	<label><input type="radio" name="status" value="0">学生登录</label>
+        </div>
+        <button type="button" ng-class='{active:loginform.$valid}'>登录</button>
+    </form>
+    <script src='../js/flexible.debug.js'></script>
+    <script src='../js/jquery-3.1.1.min.js'></script>
+    <script src='../js/angular.min.js'></script>
+    <script src='../js/login.js'></script>
+    <!-- <script src='../dest/main.js'></script> -->
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app='myapp'>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">  <title></title>
+    <title></title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../css/global.css">
+    <link rel="stylesheet" href="../css/idangerous.swiper.css"> 
+    <link rel="stylesheet" href="../css/homeView.css">
+   
+</head>
+
+<body>
+    <!-- <div class="preloader">刷新中...</div> -->
+    <div ui-view></div>
+    <footer>
+        <a ui-sref="home" title="">作业</a>
+        <a ui-sref="homeWork" title="">公告</a>
+        <a ui-sref="inform" title="">答疑</a>
+        <a ui-sref="me" title="" class="end">我的</a>
+    </footer>
+</body>
+<!-- <script src='../js/jquery-3.1.1.min.js'></script> -->
+<script src='../dest/main.js'></script>
+<!-- <script src='../js/idangerous.swiper.min.js'></script> -->
+<script src='../../bower_components/angular/angular.min.js'></script>
+<script src='../../bower_components/angular-ui-router/release/angular-ui-router.min.js'></script>
+<script src='../config.js'></script>
+<script src='../controller/homeViewController.js'></script>
+<script src='../controller/meViewController.js'></script>
+<script src='../controller/informViewController.js'></script>
+<script src='../controller/tipViewController.js'></script>
+
+
+</html>

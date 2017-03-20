@@ -1,0 +1,29 @@
+.state {
+	// text-align: center;
+	position: absolute;
+	left: 50%;
+	top: 1rem;
+	transform:translateX(-50%);
+    li {
+        font-size: 0.5rem;
+        padding: 0.1rem 0.2rem;
+        border: 0.031rem solid black;
+		float: left;
+		border-radius: 0.094rem;
+		&.start{
+			border-right: none;
+		}
+		&.active{
+			color: red;
+			border-color: red;
+		}
+    }
+}
+.homecontent{
+	li{
+		position: absolute;
+		top: 2.5rem;
+		left: 1rem;
+		font-size: 0.6rem;
+	}
+}
