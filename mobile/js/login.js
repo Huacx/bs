@@ -3,7 +3,7 @@ $(function() {
         init: function() { this.events() },
         events: function() {
             $("button").click(function() {
-                var val = $('input:radio[name="sex"]:checked').val();
+                var val = $('input:radio[name="status"]:checked').val();
                 if(val == 0){
 	                location.href = "index.html";
                 }else{
@@ -14,6 +14,21 @@ $(function() {
     };
     login.init()
 });
+// var app = angular.module('myapp',[]);
+// app.controller('loginController',['$scope','$http',function($scope,$http){
+// 	var promise = $http({
+// 		method:'type',
+// 		url:'login.js',
+// 		data:{
+
+// 		}
+// 	});
+// 	promise.then(function(res){
+
+// 	},function(){
+// 		console.log('error');
+// 	})
+// }])
 // $(function() {
 //     var login = {
 //         init: function() {
