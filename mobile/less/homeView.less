@@ -1,9 +1,7 @@
 .state {
-	// text-align: center;
-	position: absolute;
-	left: 50%;
-	top: 1rem;
-	transform:translateX(-50%);
+	width: 4rem;
+	text-align: center;
+	margin: 0.5rem auto;
     li {
         font-size: 0.5rem;
         padding: 0.1rem 0.2rem;
@@ -19,11 +17,47 @@
 		}
     }
 }
-.homecontent{
+.table-content{
 	li{
-		position: absolute;
-		top: 2.5rem;
-		left: 1rem;
-		font-size: 0.6rem;
+		// position: absolute;
+		// top: 2.5rem;
+		// left: 1rem;
+		padding: 0rem 0.5rem 0rem;
+		// 第几章
+		h4{
+			font-size: 0.688rem;
+		}
+		.questions{
+			&.text{
+				input{
+					border:none;
+					border-bottom:0.031rem solid black;
+					border-radius: 0;
+					width: auto;
+				}
+			}
+			padding-bottom:0.312rem;
+			// 第几大题
+			h5{
+				font-size: 0.625rem;
+			}
+			div{
+				padding: 0.156rem 0.0rem;
+				// 第几小题
+				p{
+					font-size: 0.562rem;
+					line-height:0.625rem;
+					padding: 0.094rem 0.0rem;
+				}
+				label{
+					padding: 0.094rem 0.0rem;
+					font-size: 0.5rem;
+					line-height: 0.812rem;
+					input{
+						border-radius: 50%;
+					}
+				}
+			}
+		}
 	}
 }
