@@ -1,0 +1,225 @@
+<ul class="state clear">
+    <li class="start" ng-click='tab(0)' ng-class='{true:"active",false:""}[st==0]'>未完成</li>
+    <li ng-click='tab(1)' ng-class='{true:"active",false:""}[st==1]'>已完成</li>
+</ul>
+<ul class="table-content">
+    <li ng-show='st==0'>
+        <h4>第一章测试</h4>
+        <ul class='questionList'>
+            <li class='question'>
+                <h5>第一节练习</h5>
+                <ul>
+                    <!-- 单选-->
+                    <li class='questions'>
+                        <h5>单选题</h5>
+                        <form>
+                            <p>1:以下哪些同学追随过唐僧</p>
+                            <label for="">
+                                <input type="radio" name="an1">孙悟空
+                            </label>
+                            <label for="">
+                                <input type="radio" name="an1">佛祖
+                            </label>
+                            <label for="">
+                                <input type="radio" name="an1">龙马
+                            </label>
+                            <label for="">
+                                <input type="radio" name="an1">金角大王
+                            </label>
+                        </form>
+                        <form>
+                            <p>1:以下哪些同学追随过唐僧</p>
+                            <label for="">
+                                <input type="radio" name="an1">孙悟空
+                            </label>
+                            <label for="">
+                                <input type="radio" name="an1">佛祖
+                            </label>
+                            <label for="">
+                                <input type="radio" name="an1">龙马
+                            </label>
+                            <label for="">
+                                <input type="radio" name="an1">金角大王
+                            </label>
+                        </form>
+                    </li>
+                    <!-- 多选-->
+                    <li class='questions'>
+                        <h5>多选题</h5>
+                        <form>
+                            <p>1:以下哪些同学追随过唐僧</p>
+                            <label for="">
+                                <input type="checkbox">孙悟空
+                            </label>
+                            <label for="">
+                                <input type="checkbox">佛祖
+                            </label>
+                            <label for="">
+                                <input type="checkbox">龙马
+                            </label>
+                            <label for="">
+                                <input type="checkbox">金角大王
+                            </label>
+                        </form>
+                        <form>
+                            <p>1:以下哪些同学追随过唐僧</p>
+                            <label for="">
+                                <input type="checkbox">孙悟空
+                            </label>
+                            <label for="">
+                                <input type="checkbox">佛祖
+                            </label>
+                            <label for="">
+                                <input type="checkbox">龙马
+                            </label>
+                            <label for="">
+                                <input type="checkbox">金角大王
+                            </label>
+                        </form>
+                    </li>
+                    <!-- 填空-->
+                    <li class='questions text'>
+                        <h5>填空题</h5>
+                        <div>
+                            <label>1:那些同学追随过唐僧:
+                                <input type="text" name="" value="">
+                            </label>
+                        </div>
+                        <div>
+                            <label>1:哪些同学追随过唐僧:
+                                <input type="text" name="" value="">
+                            </label>
+                        </div>
+                        <div>
+                            <label>1:哪些同学追随过唐僧:
+                                <input type="text" name="" value="">
+                            </label>
+                        </div>
+                    </li>
+                    <!-- 简答-->
+                    <li class='questions text'>
+                        <h5>简答题</h5>
+                        <div>
+                            <label>1:那些同学追随过唐僧:
+                                <textarea></textarea>
+                            </label>
+                        </div>
+                        <div>
+                            <label>1:哪些同学追随过唐僧:
+                                <textarea></textarea>
+                            </label>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li ng-show='st==1'>
+        <h4><span>-</span>第二章测试</h4>
+        <ul class='questionList'>
+            <li class='question'>
+                <h5>第二节练习</h5>
+                <ul>
+                    <!-- 单选-->
+                    <li class='questions'>
+                        <h5>单选题</h5>
+                        <form>
+                            <p>1:以下哪些同学追随过唐僧</p>
+                            <label for="">
+                                <input type="radio" checked name="an1">孙悟空
+                            </label>
+                            <label for="">
+                                <input type="radio" name="an1">佛祖
+                            </label>
+                            <label for="">
+                                <input type="radio" name="an1">龙马
+                            </label>
+                            <label for="">
+                                <input type="radio" name="an1">金角大王
+                            </label>
+                        </form>
+                        <form>
+                            <p>1:以下哪些同学追随过唐僧</p>
+                            <label for="">
+                                <input type="radio" checked name="an1">孙悟空
+                            </label>
+                            <label for="">
+                                <input type="radio" name="an1">佛祖
+                            </label>
+                            <label for="">
+                                <input type="radio" name="an1">龙马
+                            </label>
+                            <label for="">
+                                <input type="radio" name="an1">金角大王
+                            </label>
+                        </form>
+                    </li>
+                    <!-- 多选-->
+                    <li class='questions'>
+                        <h5>多选题</h5>
+                        <form>
+                            <p>1:以下哪些同学追随过唐僧</p>
+                            <label for="">
+                                <input type="checkbox" checked>孙悟空
+                            </label>
+                            <label for="">
+                                <input type="checkbox">佛祖
+                            </label>
+                            <label for="">
+                                <input type="checkbox" checked>龙马
+                            </label>
+                            <label for="">
+                                <input type="checkbox">金角大王
+                            </label>
+                        </form>
+                        <form>
+                            <p>1:以下哪些同学追随过唐僧</p>
+                            <label for="">
+                                <input type="checkbox" checked>孙悟空
+                            </label>
+                            <label for="">
+                                <input type="checkbox">佛祖
+                            </label>
+                            <label for="">
+                                <input type="checkbox" checked>龙马
+                            </label>
+                            <label for="">
+                                <input type="checkbox">金角大王
+                            </label>
+                        </form>
+                    </li>
+                    <!-- 填空-->
+                    <li class='questions text'>
+                        <h5>填空题</h5>
+                        <div>
+                            <label>1:那些同学追随过唐僧:
+                                <input type="text" name="" value="孙悟空、龙马、猪八戒、沙悟净">
+                            </label>
+                        </div>
+                        <div>
+                            <label>1:哪些同学追随过唐僧:
+                                <input type="text" name="" value="孙悟空、龙马、猪八戒、沙悟净">
+                            </label>
+                        </div>
+                    </li>
+                    <!-- 简答-->
+                    <li class='questions text'>
+                        <h5>简答题</h5>
+                        <div>
+                            <label>1:那些同学追随过唐僧:
+                                <textarea>孙悟空、龙马、猪八戒、沙悟净</textarea>
+                            </label>
+                        </div>
+                        <div>
+                            <label>1:哪些同学追随过唐僧:
+                                <textarea>孙悟空、龙马、猪八戒、沙悟净</textarea>
+                            </label>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <button type="button" class='submit'>提交</button>
+    <button type="button" class='exit'>退出</button>
+</ul>

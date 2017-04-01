@@ -40,23 +40,32 @@ var watch = require('gulp-watch');
 var autoprefixer = require('gulp-autoprefixer');
 var cleancss = require('gulp-cleancss');
 var concat = require('gulp-concat');
-gulp.task("default",['less','watchless'],function(){
+gulp.task("default",['studentLess','teacherLess','watchless'],function(){
 	connect.server({
 		root:'./',
 		port:'8080'
 	})
 });
 gulp.task('watchless',function(){
-	gulp.watch('mobile/less/*.less',['less']);
+	gulp.watch('mobile/studentLess/*.less',['studentLess']);
+	gulp.watch('mobile/teacherLess/*.less',['teacherLess']);
 });
 // gulp.task('watchjs',function(){
 // 	gulp.watch('mobile/js/*.js',['uglify']);
 // });
-gulp.task('less',function(){
-	 gulp.src('mobile/less/*.less')
+gulp.task('studentLess',function(){
+	 gulp.src('mobile/studentLess/*.less')
 	 .pipe(less())
 	 .pipe(autoprefixer())
 	 .pipe(cleancss())
 	 // .pipe(concat('main.css'))
-	 .pipe(gulp.dest('./mobile/css/'))
+	 .pipe(gulp.dest('./mobile/studentCss/'))
+});
+gulp.task('teacherLess',function(){
+	 gulp.src('mobile/teacherLess/*.less')
+	 .pipe(less())
+	 .pipe(autoprefixer())
+	 .pipe(cleancss())
+	 // .pipe(concat('main.css'))
+	 .pipe(gulp.dest('./mobile/teacherCss/'))
 });

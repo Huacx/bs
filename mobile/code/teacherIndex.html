@@ -1,12 +1,39 @@
 <!DOCTYPE html>
-<html>
+<html ng-app='myapp'>
+
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">  <title></title>
-	<title></title>
-	<link rel="stylesheet" href="../css/reset.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">  <title></title>
+    <title></title>
+    <link rel="stylesheet" href="../teacherCss/reset.css">
+    <link rel="stylesheet" type="text/css" href="../teacherCss/global.css">
+    <link rel="stylesheet" href="../teacherCss/idangerous.swiper.css"> 
+    <link rel="stylesheet" href="../teacherCss/homeView.css">
+    <link rel="stylesheet" type="text/css" href="../teacherCss/index.css">
+   
 </head>
+
 <body>
-	<h1 style="font-size: 1rem;">教师界面</h1>
+    <!-- <div class="preloader">刷新中...</div> -->
+    <div ui-view class="content"></div>
+    <footer>
+        <a ui-sref="home" title="">作业</a>
+        <a ui-sref="homeWork" title="">公告</a>
+        <a ui-sref="inform" title="">答疑</a>
+        <a ui-sref="me" title="" class="end">我的</a>
+    </footer>
 </body>
+<!-- <script src='../js/jquery-3.1.1.min.js'></script> -->
+<!-- <script src='../teacherDest/main.js'></script> -->
+<!-- <script src='../js/idangerous.swiper.min.js'></script> -->
+<script src='../teacherJs/flexible.debug.js'></script>
+<script src='../../bower_components/angular/angular.min.js'></script>
+<script src='../../bower_components/angular-ui-router/release/angular-ui-router.min.js'></script>
+<script src='../teacherConfig.js'></script>
+<script src='../teacherController/homeViewController.js'></script>
+<script src='../teacherController/meViewController.js'></script>
+<script src='../teacherController/informViewController.js'></script>
+<script src='../teacherController/tipViewController.js'></script>
+
+
 </html>

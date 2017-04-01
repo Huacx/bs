@@ -3,19 +3,19 @@ app.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRo
 	$urlRouterProvider.otherwise('/home');
 	$stateProvider.state('home',{
 		url:'/home',
-		templateUrl:'../views/homeView.html',
+		templateUrl:'../teacherViews/homeView.html',
 		controller:'homeViewController'
 	}).state('homeWork',{
 		url:'/homeWork',
-		templateUrl:'../views/tipView.html',
+		templateUrl:'../teacherViews/tipView.html',
 		controller:'tipViewController'
 	}).state('inform',{
 		url:'/inform',
-		templateUrl:'../views/informView.html',
+		templateUrl:'../teacherViews/informView.html',
 		controller:'informViewController'
 	}).state('me',{
 		url:'/me',
-		templateUrl:'../views/meView.html',
+		templateUrl:'../teacherViews/meView.html',
 		controller:'meViewController'
 	})
 }])
