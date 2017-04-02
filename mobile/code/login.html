@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app='myapp'>
 
 <head>
     <meta charset="utf-8">
@@ -11,7 +11,7 @@
     <link rel="stylesheet" type="text/css" href="../studentCss/login.css">
 </head>
 
-<body>
+<body ng-controller = 'loginController'>
 	<h1>作业管理系统</h1>
     <form ng-model='loginform' name='loginform' novalidate>
         <div class="username-group">
@@ -29,13 +29,13 @@
             </div>
         </div>
         <div class="remember">
-        	<label><input type="checkbox">记住我</label>
+        	<label><input type="checkbox" id="rememberMe" ng-checked='remVal' ng-click='remember()'>记住我</label>
         </div>
         <div class="status">
-        	<label><input type="radio"  name="status" value="1" checked>教师登录</label>
-        	<label><input type="radio" name="status" value="0">学生登录</label>
+        	<label><input type="radio"  name="status" value="1" ng-checked='state == 1' checked ng-click='radio(1)'>教师登录</label>
+        	<label><input type="radio" name="status" value="0" ng-checked='state == 0' ng-click='radio(0)'>学生登录</label>
         </div>
-        <button type="button" ng-class='{active:loginform.$valid}' ng-disabled="loginform.$invalid">登录</button>
+        <button id="login" type="button" ng-class='{active:loginform.$valid}' ng-disabled="loginform.$invalid" ng-click = 'login()'>登录</button>
     </form>
     <script src='../../bower_components/angular/angular.min.js'></script>
     <script src='../studentJs/jquery-3.1.1.min.js'></script>
