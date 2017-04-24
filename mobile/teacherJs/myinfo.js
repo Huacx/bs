@@ -5,7 +5,8 @@ $(function(){
 		},
 		event:function(){
 			$('.pre').on('click',function(){
-				location.href = '../code/#!/me';
+				// location.href = '../code/#!/me';
+				window.history.back();
 			});
 			$('.save').on('click',function(){
 				alert('修改成功');

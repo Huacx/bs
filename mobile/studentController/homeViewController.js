@@ -4,4 +4,7 @@ app.controller('homeViewController',['$scope',function($scope){
 	$scope.tab =function(n){
 		$scope.st = n;
 	}
+	$scope.submit = function(){
+		alert('OK');
+	}
 }])
