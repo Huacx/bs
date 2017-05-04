@@ -15,7 +15,7 @@
 	<h1>作业管理系统</h1>
     <form ng-model='loginform' name='loginform' novalidate>
         <div class="username-group">
-            <input type="number" id="username" name="username" ng-model='username' placeholder="请输入账号" required ng-pattern='/^(201)\d{9}$/' maxlength="12">
+            <input type="number" id="username" name="username" ng-model='username' placeholder="请输入账号" required  maxlength="12">
             <div>
                 <div class="error-tip" ng-show='loginform.username.$dirty && loginform.username.$error.required'>请输入账号</div>
                 <div class="error-tip" ng-show='loginform.username.$dirty && loginform.username.$error.pattern'>账号格式不正确</div>

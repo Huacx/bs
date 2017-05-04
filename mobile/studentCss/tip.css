@@ -1,1 +1,1 @@
-.tip{text-align:center;padding:.625rem .625rem 0}.tip li a{line-height:.75rem;font-size:.625rem}
+#ann{padding:1rem;text-align:center}#ann .ann_title{width:75%;margin:0 auto}#ann .ann_title li{float:left;width:33%;height:.8rem;line-height:.8rem;font-size:.5rem;background-color:#4872F6;border:.031rem solid #fff;box-sizing:border-box}#ann .ann_title li.active{background-color:#7F81EB}#ann .ann_content{margin-top:.625rem}#ann .ann_content li a{float:left;line-height:.75rem;font-size:.625rem;color:#00f}#ann .ann_content li span{float:right;line-height:.75rem;font-size:.625rem}

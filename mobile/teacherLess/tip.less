@@ -1,10 +1,43 @@
-.tip{
+#ann {
+	padding: 1rem;
 	text-align: center;
-	padding:0.625rem 0.625rem 0.0rem;
-	li{
-		a{
-			line-height: 0.75rem;
-			font-size: 0.625rem;
-		}
-	}
+    .ann_title {
+    	width: 75%;
+    	margin: 0.0rem auto;
+        li {
+            float: left;
+            width: 33%;
+            height: 0.8rem;
+            line-height: 0.8rem;
+            font-size: 0.5rem;
+            background-color: #4872F6;
+            border: 0.031rem solid #fff;
+			box-sizing: border-box;
+			&.active{
+				background-color: #7F81EB;
+			}
+        }
+    }
+    .add-ann{
+        margin-top: 0.312rem;
+        background-color: #77EACB;
+        border:none;
+        outline: none;
+    }
+    .ann_content {
+        margin-top: 0.625rem;
+        li {
+            a {
+                float: left;
+                line-height: 0.75rem;
+                font-size: 0.625rem;
+                color: blue;
+            }
+            span{
+            	float: right;
+            	line-height: 0.75rem;
+                font-size: 0.625rem;
+            }
+        }
+    }
 }

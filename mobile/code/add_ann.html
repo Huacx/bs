@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app='annApp'>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../teacherCss/global.css">
+    <link rel="stylesheet" href="../teacherCss/ass_ann.css">
+    <link rel="stylesheet" type="text/css" href="../teacherCss/reset.css">
+</head>
+
+<body ng-controller='annController'>
+	<h1>添加公告</h1>
+    <div class="ann_type">
+        <span>作业</span>
+        <input type="radio" name="ann_type" checked="" ng-click='annType(0)'>
+        <span>考试</span>
+        <input type="radio" name="ann_type" ng-click='annType(1)'>
+        <span>其他</span>
+        <input type="radio" name="ann_type" ng-click='annType(2)'>
+    </div>
+    <div class='ann_title'>
+        <label>公告名称：
+            <input type="text" name="" value="" ng-model='annTitle'>
+        </label>
+    </div>
+    <div class="ann_content">
+        <span>公告内容：</span>
+        <textarea name="" ng-model='annContent'></textarea>
+    </div>
+    <div class="ann_btn">
+    	<button type="" class="ann_submit" ng-click='annSubmit()'>提交</button>
+    	<button type="" class="abb_cancel" ng-click='annCancel()'>取消</button>
+    </div>
+    <script src='../teacherJs/flexible.debug.js'></script>
+    <script src='../../bower_components/angular/angular.min.js'></script>
+    <script src='../teacherJs/add_ann.js'></script>
+</body>
+
+</html>

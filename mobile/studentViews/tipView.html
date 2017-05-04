@@ -1,8 +1,17 @@
-<ul class='tip'>
-	<li><a href="" title="" ng-click='tipContent(2011)'>2011年公告</a></li>
-	<li><a href="" title="" ng-click='tipContent(2012)'>2012年公告</a></li>
-	<li><a href="" title="" ng-click='tipContent(2013)'>2013年公告</a></li>
-	<li><a href="" title="" ng-click='tipContent(2014)'>2014年公告</a></li>
-	<li><a href="" title="" ng-click='tipContent(2015)'>2015年公告</a></li>
-	<li><a href="" title="" ng-click='tipContent(2016)'>2016年公告</a></li>
-</ul>
+<div id="ann">
+    <ul class="ann_title clear">
+        <li ng-class='{true:"active",false:""}[ann_st==0]' ng-click='ann_tab(0)'>作业</li>
+        <li ng-class='{true:"active",false:""}[ann_st==1]' ng-click='ann_tab(1)'>考试</li>
+        <li ng-class='{true:"active",false:""}[ann_st==2]' ng-click='ann_tab(2)'>其他</li>
+    </ul>
+    <ul class='ann_content'>
+        <li claer ng-click='showAnn()'>
+            <a href="" title="" ng-click='tipContent(2011)'>{{ann_content}}</a>
+            <span>{{ann_date}}</span>
+        </li>
+        <li claer ng-click='showAnn()'>
+            <a href="" title="" ng-click='tipContent(2011)'>{{ann_content}}</a>
+            <span>{{ann_date}}</span>
+        </li>
+    </ul>
+</div>
