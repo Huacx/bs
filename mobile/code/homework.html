@@ -1,131 +1,74 @@
 <!DOCTYPE html>
-<html>
+<html ng-app='homeApp'>
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title></title>
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="../studentCss/global.css">
+    <link rel="stylesheet" type="text/css" href="../studentCss/reset.css">
+    <link rel="stylesheet" type="text/css" href="../studentCss/showHomework.css">
 </head>
 
-<body>
-    <ul class='questionList'>
-        <li ng-repeat='item in chapterData'>
-            <!-- 第几章 -->
-            <h4>{{item.chapter}}</h4>
-            <li class='question' ng-repeat='data2 in item.titleList'>
-                第几节
-                <h5>{{data2.title}}</h5>
-                <ul>
-                    <!-- 单选 -->
-                    <li class='questions' ng-repeat='data3 in data2.nameList'>
-                        <h5>{{data3.name}}</h5>
-                        <form ng-repeat='data4 in data3.questionList'>
-                            <p>{{data4.question}}</p>
-                            <label for="" ng-repeat='data5 in data4.answer'>
-                                <input type="{{data5.type}}" name="an1">{{data}}
-                            </label>
-                        </form>
-                    </li>
-                    填空
-                    <li class='questions text'>
-                        <h5>填空题</h5>
-                        <div>
-                            <label>1:那些同学追随过唐僧:
-                                <input type="text" name="" value="">
-                            </label>
-                        </div>
-                    </li>
-                    简答
-                    <li class='questions text'>
-                        <h5>简答题</h5>
-                        <div>
-                            <label>1:那些同学追随过唐僧:
-                                <textarea></textarea>
-                            </label>
-                        </div>
-                    </li>
-                </ul>
-            </li>
+<body ng-controller='homeController'>
+    <ul class='list'>
+        <h3>一、选择题</h3>
+        <li class="radioList">
+            <ul class="answerList">
+                <li>
+                    <p>1:以下哪条语句会产生运行错误：</p>
+                    <label for="">
+                        <input type="radio" name="an1"> var obj = ()
+                    </label>
+                    <br>
+                    <label for="">
+                        <input type="radio" name="an1"> var obj = []
+                    </label>
+                    <br>
+                    <label for="">
+                        <input type="radio" name="an1"> var obj = {}
+                    </label>
+                    <br>
+                    <label for="">
+                        <input type="radio" name="an1"> var obj = ''
+                    </label>
+                </li>
+            </ul>
         </li>
-        <li>
-            <h4>第一章测试</h4>
-            <li class='question'>
-                <h5>第一节练习</h5>
-                <ul>
-                    单选
-                    <li class='questions'>
-                        <h5>单选题</h5>
-                        <form>
-                            <p>1:以下哪些同学追随过唐僧</p>
-                            <label for="">
-                                <input type="radio" name="an1">孙悟空
-                            </label>
-                            <label for="">
-                                <input type="radio" name="an1">佛祖
-                            </label>
-                            <label for="">
-                                <input type="radio" name="an1">龙马
-                            </label>
-                            <label for="">
-                                <input type="radio" name="an1">金角大王
-                            </label>
-                        </form>
-                        <form>
-                            <p>1:以下哪些同学追随过唐僧</p>
-                            <label for="">
-                                <input type="radio" name="an1">孙悟空
-                            </label>
-                            <label for="">
-                                <input type="radio" name="an1">佛祖
-                            </label>
-                            <label for="">
-                                <input type="radio" name="an1">龙马
-                            </label>
-                            <label for="">
-                                <input type="radio" name="an1">金角大王
-                            </label>
-                        </form>
-                    </li>
-                    填空
-                    <li class='questions text'>
-                        <h5>填空题</h5>
-                        <div>
-                            <label>1:那些同学追随过唐僧:
-                                <input type="text" name="" value="">
-                            </label>
-                        </div>
-                        <div>
-                            <label>1:哪些同学追随过唐僧:
-                                <input type="text" name="" value="">
-                            </label>
-                        </div>
-                        <div>
-                            <label>1:哪些同学追随过唐僧:
-                                <input type="text" name="" value="">
-                            </label>
-                        </div>
-                    </li>
-                    简答
-                    <li class='questions text'>
-                        <h5>简答题</h5>
-                        <div>
-                            <label>1:那些同学追随过唐僧:
-                                <textarea></textarea>
-                            </label>
-                        </div>
-                        <div>
-                            <label>1:哪些同学追随过唐僧:
-                                <textarea></textarea>
-                            </label>
-                        </div>
-                    </li>
-                </ul>
-            </li>
+        
+        <h3>二、填空题</h3>
+        <li class="voidList">
+            <ul>
+                <li>
+                    <p>1、Linux系统通过命令给其他用户发消息?</p>
+                    <input type="text" name="">
+                </li>
+            </ul>
         </li>
+        
+        <h3>三、简答题</h3>
+        <li class="answerList">
+            <ul>
+                <li>
+                    <p>1、说明localstorage和sessionStorage的区别。</p>
+                    <textarea name=""></textarea>
+                </li>
+            </ul>
+        </li>
+        
+        <h3>四、程序题</h3>
+        <li class="proList">
+            <p>1、打印1000以内的水仙花数。</p>
+            <p>2、打印2000年以内的闰年。</p>
+            <input type="file" name="">
+        </li>
+        <div class="btnList">
+            <button type="" class="submit" ng-click='submit()'>提交</button>
+            <button type="" class="cancel" ng-click='cancel()'>退出</button>
+        </div>
     </ul>
-    <script src='../../'></script
-    >
+   <script src='../studentJs/flexible.debug.js'></script>
+   <script src='../../bower_components/angular/angular.min.js'></script>
+   <script src='../studentJs/showHomework.js'></script>
 </body>
-
 </html>
