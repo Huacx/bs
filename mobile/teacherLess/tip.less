@@ -1,9 +1,9 @@
 #ann {
-	padding: 1rem;
-	text-align: center;
+    padding: 1rem;
+    text-align: center;
     .ann_title {
-    	width: 75%;
-    	margin: 0.0rem auto;
+        width: 75%;
+        margin: 0.0rem auto;
         li {
             float: left;
             width: 33%;
@@ -12,21 +12,31 @@
             font-size: 0.5rem;
             background-color: #4872F6;
             border: 0.031rem solid #fff;
-			box-sizing: border-box;
-			&.active{
-				background-color: #7F81EB;
-			}
+            box-sizing: border-box;
+            &.active{
+                background-color: #7F81EB;
+            }
         }
     }
-    .add-ann{
-        margin-top: 0.312rem;
-        background-color: #77EACB;
+    .new_ann{
+        width: 40%;
+        background-color: #4872F6;
+        font-size: 0.5rem;
+        color: white;
         border:none;
         outline: none;
+        margin-top: 0.312rem;
+        height: 0.625rem;
+        line-height: 0.625rem;
+        border-radius: 0.094rem;
     }
     .ann_content {
-        margin-top: 0.625rem;
+        // text-align: center;
+        // padding: 0.625rem 0.625rem 0.0rem;
+        height: 12.0rem;
+        margin-top: 0.312rem;
         li {
+            line-height: 0.688rem;
             a {
                 float: left;
                 line-height: 0.75rem;
@@ -34,16 +44,19 @@
                 color: blue;
             }
             span{
-            	float: right;
-            	line-height: 0.75rem;
+                float: right;
+                line-height: 0.75rem;
                 font-size: 0.625rem;
             }
         }
     }
     .pageList{
+        padding-top: 0.312rem;
+        margin: 0.0rem auto;
         li{
             float: left;
-            padding: 0.0rem 0.156rem;
+            padding: 0.0rem 0.094rem;
+            font-size: 0.5rem;
         }
     }
 }

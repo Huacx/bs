@@ -4,15 +4,12 @@
         <li ng-class='{true:"active",false:""}[ann_st==1]' ng-click='ann_tab(1)'>考试</li>
         <li ng-class='{true:"active",false:""}[ann_st==2]' ng-click='ann_tab(2)'>其他</li>
     </ul>
-    <button ng-click="addAnn()" class="add-ann">添加新公告</button>
-    <ul class='ann_content'>
-        <li claer ng-click='showAnn()'>
+    <button type="" class='new_ann' ng-click='addAnn()'>发布新公告</button>
+    <ul class='ann_content clear'>
+        <li ng-click='showAnn()' ng-repeat='item in ann_date' class="clear">
             <a href="" title="" ng-click='tipContent(2011)'>{{ann_content}}</a>
-            <span>{{ann_date}}</span>
-        </li>
-        <li claer ng-click='showAnn()'>
-            <a href="" title="" ng-click='tipContent(2011)'>{{ann_content}}</a>
-            <span>{{ann_date}}</span>
+            <span>{{item}}</span>
         </li>
     </ul>
+     <ul class="pageList clear" uib-pagination total-items="countAll" items-per-page='count' ng-model="page" boundary-links="true" max-size="maxSize" force-ellipses="true" previous-text="上一页" next-text="下一页" first-text="首页" last-text="尾页" ng-change="pageChanged()" id="pageChange">
 </div>
