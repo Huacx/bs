@@ -34,6 +34,24 @@ app.controller('informViewController', ['$scope', '$http', function($scope, $htt
         // },
         // 事件
         events: function() {
+            // 添加疑问
+            $scope.addInform = function(){
+                var question = prompt('请输入您的疑问：');
+                if(question == '' || question == null){
+                    alert('您没有输入问题，提问失败！！！');
+                }else{
+                    alert('提问成功');
+                    // $http({
+                    //     url:'',
+                    //     method:'post',
+                    //     data:{
+                    //         question:question
+                    //     }
+                    // }).then{function(res){
+                    //     console.log(res);
+                    // }}
+                }
+            }
             // 点击显示详情
             $scope.tipContent = function(num) {
                     var content = '我是' + num + '年详情';
@@ -55,7 +73,6 @@ app.controller('informViewController', ['$scope', '$http', function($scope, $htt
                 }
             }
             // 分页
-            // 点击按钮操作
             $scope.pageChanged = function(res) {
             	console.log($scope.ann_date);
             	$scope.ann_date = $scope.showArr.slice(($scope.page-1)*16,($scope.page-1)*16+16);

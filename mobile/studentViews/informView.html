@@ -3,9 +3,9 @@
         <li ng-class='{true:"active",false:""}[ann_st==0]' ng-click='ann_tab(0)'>答疑</li>
         <li ng-class='{true:"active",false:""}[ann_st==1]' ng-click='ann_tab(1)'>统计</li>
     </ul>
-    <button type="" class='new_iform' ng-click='addIform()'>我有疑问</button>
+    <button type="" class='new_iform' ng-click='addInform()'>我有疑问</button>
     <ul class='ann_content clear'>
-        <li ng-click='showAnn()' ng-repeat='item in ann_date' class="clear">
+        <li ng-click='showQuestion()' ng-repeat='item in ann_date' class="clear">
             <a href="" title="" ng-click='tipContent(2011)'>{{ann_content}}</a>
             <span>{{item}}</span>
         </li>
