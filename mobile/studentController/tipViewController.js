@@ -63,11 +63,14 @@ app.controller('tipViewController', ['$scope', '$http', function($scope, $http) 
         // 获取数据
         getData: function() {
             $http({
-                method: 'get',
+                method: 'post',
                 url: 'http://ourworkmanager.cn/myine/annshow.php',
                 data: {
                     ann_type: $scope.ann_st
-                }
+                },
+                headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
             }).then(function(res) {
                 console.log(res);
                 // $scope.showData = res;

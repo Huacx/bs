@@ -11,16 +11,16 @@
     <link rel="stylesheet" href="../teacherCss/homeView.css">
     <link rel="stylesheet" type="text/css" href="../teacherCss/index.css">
     <link rel="stylesheet" type="text/css" href="../teacherCss/tip.css">
-   
+    <link rel="stylesheet" type="text/css" href="../teacherCss/inform.css">
 </head>
 <body>
     <!-- <div class="preloader">刷新中...</div> -->
     <div ui-view class="content"></div>
-    <footer>
-        <a ui-sref="home" title="">作业</a>
-        <a ui-sref="homeWork" title="">公告</a>
-        <a ui-sref="inform" title="">答疑</a>
-        <a ui-sref="me" title="" class="end">我的</a>
+    <footer class="clear">
+        <li><a ui-sref="home" title="" ui-sref-active="active">作业</a></li>
+        <li><a ui-sref="homeWork" title="" ui-sref-active="active">公告</a></li>
+        <li><a ui-sref="inform" title="" ui-sref-active="active">答疑</a></li>
+        <li><a ui-sref="me" title="" ui-sref-active="active">我的</a></li>
     </footer>
 </body>
 <!-- <script src='../js/jquery-3.1.1.min.js'></script> -->

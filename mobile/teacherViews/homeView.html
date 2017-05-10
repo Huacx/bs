@@ -1,184 +1,50 @@
 <ul class="state clear">
-    <li class="start" ng-click='tab(0)' ng-class='{true:"active",false:""}[st==0]'>未批阅</li>
-    <li ng-click='tab(1)' ng-class='{true:"active",false:""}[st==1]'>已批阅</li>
+    <li class="start" ng-click='tab(0)' ng-class='{true:"active",false:""}[st==0]'>未完成</li>
+    <li ng-click='tab(1)' ng-class='{true:"active",false:""}[st==1]'>已完成</li>
 </ul>
-<div class='new-work'>
-	发布新作业
-</div>
 <ul class="table-content">
     <li ng-show='st==0'>
-        <h4>第一章测试</h4>
-        <div class="questions">
-            <h5>单选题</h5>
-            <form>
-                <p>1:以下哪些同学追随过唐僧</p>
-                <label for="">
-                    <input type="radio" name="an1">孙悟空
-                </label>
-                <label for="">
-                    <input type="radio" name="an1">佛祖
-                </label>
-                <label for="">
-                    <input type="radio" name="an1">龙马
-                </label>
-                <label for="">
-                    <input type="radio" name="an1">金角大王
-                </label>
-            </form>
-            <form>
-                <p>1:以下哪些同学追随过唐僧</p>
-                <label for="">
-                    <input type="radio" name="an1">孙悟空
-                </label>
-                <label for="">
-                    <input type="radio" name="an1">佛祖
-                </label>
-                <label for="">
-                    <input type="radio" name="an1">龙马
-                </label>
-                <label for="">
-                    <input type="radio" name="an1">金角大王
-                </label>
-            </form>
-        </div>
-        <div class="questions">
-            <h5>多选题</h5>
-            <form>
-                <p>1:以下哪些同学追随过唐僧</p>
-                <label for="">
-                    <input type="checkbox">孙悟空
-                </label>
-                <label for="">
-                    <input type="checkbox">佛祖
-                </label>
-                <label for="">
-                    <input type="checkbox">龙马
-                </label>
-                <label for="">
-                    <input type="checkbox">金角大王
-                </label>
-            </form>
-            <form>
-                <p>1:以下哪些同学追随过唐僧</p>
-                <label for="">
-                    <input type="checkbox">孙悟空
-                </label>
-                <label for="">
-                    <input type="checkbox">佛祖
-                </label>
-                <label for="">
-                    <input type="checkbox">龙马
-                </label>
-                <label for="">
-                    <input type="checkbox">金角大王
-                </label>
-            </form>
-        </div>
-        <div class="questions text">
-            <h5>填空题</h5>
-            <div>
-            	<label>1:那些同学追随过唐僧:<input type="text" name="" value=""></label>
-            </div>
-            <div>
-            	<label>1:哪些同学追随过唐僧:<input type="text" name="" value=""></label>
-            </div>
-            <div>
-            	<label>1:哪些同学追随过唐僧:<input type="text" name="" value=""></label>
-            </div>
-        </div>
-        <div class="questions text">
-            <h5>简答题</h5>
-            <div>
-                <label>1:那些同学追随过唐僧:<textarea></textarea></label>
-            </div>
-            <div>
-                <label>1:哪些同学追随过唐僧:<textarea></textarea></label>
-            </div>
-        </div>
+        <ul class='questionList'>
+            <li>
+                <h4 ng-click='par_btn(0)'>第一章</h4>
+                <ul ng-show='work_st == 0'>
+                    <li>第一节</li>
+                    <li>第二节</li>
+                    <li>第三节</li>
+                    <li>第四节</li>
+                </ul>
+            </li>
+            <li>
+                <h4 ng-click='par_btn(1)'>第二章</h4>
+                <ul ng-show='work_st == 1'>
+                    <li>第一节</li>
+                    <li>第二节</li>
+                    <li>第三节</li>
+                    <li>第四节</li>
+                </ul>
+            </li>
+        </ul>
     </li>
     <li ng-show='st==1'>
-        <h4>第二章测试</h4>
-        <div class="questions">
-            <h5>单选题</h5>
-            <form>
-                <p>1:以下哪些同学追随过唐僧</p>
-                <label for="">
-                    <input type="radio" name="an1" checked>孙悟空
-                </label>
-                <label for="">
-                    <input type="radio" name="an1" >佛祖
-                </label>
-                <label for="">
-                    <input type="radio" name="an1">龙马
-                </label>
-                <label for="">
-                    <input type="radio" name="an1">金角大王
-                </label>
-            </form>
-            <form>
-                <p>1:以下哪些同学追随过唐僧</p>
-                <label for="">
-                    <input type="radio" name="an1" checked>孙悟空
-                </label>
-                <label for="">
-                    <input type="radio" name="an1">佛祖
-                </label>
-                <label for="">
-                    <input type="radio" name="an1">龙马
-                </label>
-                <label for="">
-                    <input type="radio" name="an1">金角大王
-                </label>
-            </form>
-        </div>
-        <div class="questions">
-            <h5>多选题</h5>
-            <form>
-                <p>1:以下哪些同学追随过唐僧</p>
-                <label for="">
-                    <input type="checkbox" checked>孙悟空
-                </label>
-                <label for="">
-                    <input type="checkbox">佛祖
-                </label>
-                <label for="">
-                    <input type="checkbox" checked>龙马
-                </label>
-                <label for="">
-                    <input type="checkbox">金角大王
-                </label>
-            </form>
-            <form>
-                <p>2:以下哪些同学追随过唐僧</p>
-                <label for="">
-                    <input type="checkbox" checked>孙悟空
-                </label>
-                <label for="">
-                    <input type="checkbox">佛祖
-                </label>
-                <label for="">
-                    <input type="checkbox" checked>龙马
-                </label>
-                <label for="">
-                    <input type="checkbox">金角大王
-                </label>
-            </form>
-           
-        </div>
-        <div class="questions text">
-            <h5>填空题</h5>
-            <div>
-                <label>1:那些同学追随过唐僧:<input type="text" name="" value=""></label>
-            </div>
-            <div>
-                <label>1:哪些同学追随过唐僧:<input type="text" name="" value=""></label>
-            </div>
-            <div>
-                <label>1:哪些同学追随过唐僧:<input type="text" name="" value=""></label>
-            </div>
-        </div>
+         <ul class='questionList'>
+            <li>
+                <h4 ng-click='par_btn(0)'>第一章</h4>
+                <ul ng-show='work_st == 0'>
+                    <li ng-click='work_content()'>第一节</li>
+                    <li>第二节</li>
+                    <li>第三节</li>
+                    <li>第四节</li>
+                </ul>
+            </li>
+            <li>
+                <h4 ng-click='par_btn(1)'>第二章</h4>
+                <ul ng-show='work_st == 1'>
+                    <li>第一节</li>
+                    <li>第二节</li>
+                    <li>第三节</li>
+                    <li>第四节</li>
+                </ul>
+            </li>
+        </ul>
     </li>
-     <button type="button" class='submit'>提交</button>
-    <button type="button" class='exit'>退出</button>
 </ul>
-

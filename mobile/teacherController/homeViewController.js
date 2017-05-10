@@ -4,4 +4,7 @@ app.controller('homeViewController',['$scope',function($scope){
 	$scope.tab =function(n){
 		$scope.st = n;
 	}
+	$scope.par_btn = function(num){
+		$scope.work_st = num;
+	}
 }])

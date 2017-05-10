@@ -1,7 +1,14 @@
-<div class='content' ng-controller='informViewController'>
-	<div>
-		<span ng-click='button(0)'>答疑</span>
-		<span ng-click='button(1)'>统计</span>
-	</div>
-	<div>{{content}}</div>
+<div id="inform" ng-controler='informViewController'>
+    <ul class="ann_title clear">
+        <li ng-class='{true:"active",false:""}[ann_st==0]' ng-click='ann_tab(0)'>答疑</li>
+        <li ng-class='{true:"active",false:""}[ann_st==1]' ng-click='ann_tab(1)'>统计</li>
+    </ul>
+    <button type="" class='new_iform' ng-click='addIform()'>我有疑问</button>
+    <ul class='ann_content clear'>
+        <li ng-click='showAnn()' ng-repeat='item in ann_date' class="clear">
+            <a href="" title="" ng-click='tipContent(2011)'>{{ann_content}}</a>
+            <span>{{item}}</span>
+        </li>
+    </ul>
+     <ul class="pageList clear" uib-pagination total-items="countAll" items-per-page='count' ng-model="page" boundary-links="true" max-size="maxSize" force-ellipses="true" previous-text="上一页" next-text="下一页" first-text="首页" last-text="尾页" ng-change="pageChanged()" id="pageChange">
 </div>

@@ -5,7 +5,7 @@
         <li ng-class='{true:"active",false:""}[ann_st==2]' ng-click='ann_tab(2)'>其他</li>
     </ul>
     <ul class='ann_content clear'>
-        <li ng-click='showAnn()' ng-repeat='item in ann_date' class="clear">
+        <li ng-repeat='item in ann_date' ng-click='showAnn(item.content)' class="clear">
             <a href="" title="" ng-click='tipContent(2011)'>{{ann_content}}</a>
             <span>{{item}}</span>
         </li>

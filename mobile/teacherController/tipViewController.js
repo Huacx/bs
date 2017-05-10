@@ -53,47 +53,63 @@ app.controller('tipViewController', ['$scope', '$http', function($scope, $http) 
             $scope.ann_st = 0;
             $scope.ann_content = '作业通知';
             // $scope.ann_date = '2017-05-03';
-            // this.getData();
+            this.getData();
 
             $scope.showArr = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60];
-        	$scope.countAll = $scope.showArr.length;
+        	// $scope.countAll = 1;
         	$scope.ann_date = $scope.showArr.slice(($scope.page-1)*16,($scope.page-1)*16+16);
             this.events();
         },
         // 获取数据
         getData: function() {
             $http({
-                method: 'post',
-                url: 'http://ourworkmanager.cn/myine/annshow.php',
+                method: 'get',
+                // url: 'http://ourworkmanager.cn/myine/annshow.php',
+                url:'../../json/ann.json',
+                headers: {
+                    'Content-Type' : 'application/x-www-form-urlencoded'
+                },
                 data: {
                     ann_type: $scope.ann_st
                 }
             }).then(function(res) {
-                console.log(res);
+                $scope.work_data = res.data.work_list;
+                $scope.test_data = res.data.test_list;
+                $scope.other_data = res.data.other_list;
+                console.log($scope.ann_st)
+                // console.log(res);
                 $scope.showData = res;
+                $scope.countAll = $scope.work_data.length;
                
             })
         },
         // 事件
         events: function() {
+            var that = this;
             // 点击显示详情
-            $scope.tipContent = function(num) {
-                    var content = '我是' + num + '年详情';
+            $scope.tipContent = function(content) {
+                    // var content = '我是' + num + '年详情';
                     alert(content);
                 }
                 // 类型切换
             $scope.ann_tab = function(st) {
-            	// this.getData();
                 $scope.ann_st = st;
+                // that.getData();
                 if (st == 0) {
-                    $scope.ann_content = '作业通知';
-                    $scope.ann_date = '2017-05-03';
+                    // $scope.ann_content = '作业通知';
+                    // $scope.ann_date = '2017-05-03';
+                    $scope.countAll = $scope.work_data.length;
+                    $scope.listData = $scope.work_data;
                 } else if (st == 1) {
-                    $scope.ann_content = '考试公告';
-                    $scope.ann_date = '2017-05-04';
+                    // $scope.ann_content = '考试公告';
+                    // $scope.ann_date = '2017-05-04';
+                    $scope.countAll = $scope.test_data.length;
+                    $scope.listData = $scope.test_data;
                 } else {
-                    $scope.ann_content = '其他公告';
-                    $scope.ann_date = '2017-05-05';
+                    // $scope.ann_content = '其他公告';
+                    // $scope.ann_date = '2017-05-05';
+                    $scope.countAll = $scope.other_data.length;
+                    $scope.listData = $scope.other_data;
                 }
             }
             // 分页

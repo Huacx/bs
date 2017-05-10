@@ -43,66 +43,73 @@
 var app = angular.module('myapp', []);
 app.controller('loginController', ['$scope', '$http', function($scope, $http) {
 
-
-        $scope.state = 0;
-        $scope.remVal = false;
-        // 登录身份选项
-        $scope.radio = function(num) {
-            $scope.state = num;
-        }
-        // 记住我选项
-        $scope.login = function() {
-            var promise = $http({
-                url: 'http://ourworkmanager.cn/myine/login.php',
-                method: 'get',
-                params: {
-                    username: $scope.username,
-                    password: $scope.password
-                }
-            });
-            promise.then(function(res) {
-                // console.log(res);
-                var data = res.data.status;
-                //*用户登录状态表示 0：表示登录成功，1：表示密码错误，
-               // 2： 用户名不存在， - 1： 用户名密码不为空
-                if (data == 0) {
-                    localStorage.username = $scope.username;
-                    if ($scope.state == 0) { //学生界面
-                        location.href = '../code/studentIndex.html'
-                    } else { //教师界面
-                        location.href = '../code/teacherIndex.html'
+    var login = {
+        init: function() {
+            $scope.remVal = false;
+            localStorage.username
+            localStorage.password
+            $scope.username;
+            $scope.password;
+            this.events();
+        },
+        events: function() {
+            $scope.login = function() {
+                var promise = $http({
+                    url: 'http://ourworkmanager.cn/myine/login.php',
+                    method: 'get',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    params: {
+                        username: $scope.username,
+                        password: $scope.password
                     }
+                });
+                promise.then(function(res) {
+                    console.log(res);
+                    var data = res.data;
+                    //*用户登录状态表示 0：表示登录成功，1：表示密码错误，
+                    // 2： 用户名不存在， - 1： 用户名密码不为空
+                    if (data.status == 0) {
+                        localStorage.username = $scope.username;
+                        if (data.usertype == 1) { //学生界面
+                            location.href = '../code/studentIndex.html'
+                        } else { //教师界面
+                            location.href = '../code/teacherIndex.html'
+                        }
+                    } else if (data == 1) {
+                        alert('用户名或密码错误');
+                        return;
+                    } else if (data == 2) {
+                        alert('用户名不存在');
+                        return;
+                    } else {
+                        alert('登陆失败');
+                        return;
+                    }
+                }, function(res) {
+                    // console.log(res);
+                });
+                if ($scope.remVal) {
+                    localStorage.username = $scope.username;
+                    localStorage.password = $scope.password;
                 }
-                else if(data == 1){
-                    alert('用户名或密码错误');
-                    return;
-                }
-                else if( data == 2 ){
-                    alert('用户名不存在');
-                    return;
-                }
-                else{
-                    alert('登陆失败');
-                    return;
-                }
-            }, function(res) {
-                // console.log(res);
-            });
-            if ($scope.remVal) {
-                localStorage.username = $scope.username;
-                localStorage.password = $scope.password;
             }
-        }
-        $scope.remember = function() {
+            $scope.remember = function() {
                 $scope.remVal = !$scope.remVal;
             }
-           
-        if ($scope.remVal) {
-            $scope.username = localStorage.username;
-            $scope.password = localStorage.password;
-        } else {
-            $scope.username = '';
-            $scope.password = '';
         }
-    }])
-  
+    }
+    login.init();
+
+    // 记住我选项
+
+
+    // if ($scope.remVal) {
+    //     $scope.username = localStorage.username;
+    //     $scope.password = localStorage.password;
+    // } else {
+    //     $scope.username = '';
+    //     $scope.password = '';
+    // }
+}])

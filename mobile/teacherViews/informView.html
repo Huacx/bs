@@ -1,1 +1,13 @@
-<h1>公告</h1>
+<div id="inform">
+    <ul class="ann_title clear">
+        <li ng-class='{true:"active",false:""}[ann_st==0]' ng-click='ann_tab(0)'>答疑</li>
+        <li ng-class='{true:"active",false:""}[ann_st==1]' ng-click='ann_tab(1)'>统计</li>
+    </ul>
+    <ul class='ann_content clear'>
+        <li ng-click='showAnn()' ng-repeat='item in ann_date' class="clear">
+            <a href="" title="" ng-click='tipContent(2011)'>{{ann_content}}</a>
+            <span>{{item}}</span>
+        </li>
+    </ul>
+     <ul class="pageList clear" uib-pagination total-items="countAll" items-per-page='count' ng-model="page" boundary-links="true" max-size="maxSize" force-ellipses="true" previous-text="上一页" next-text="下一页" first-text="首页" last-text="尾页" ng-change="pageChanged()" id="pageChange">
+</div>

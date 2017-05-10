@@ -31,10 +31,6 @@
         <div class="remember">
         	<label><input type="checkbox" id="rememberMe" ng-checked='remVal' ng-click='remember()'>记住我</label>
         </div>
-        <div class="status">
-        	<label><input type="radio"  name="status" value="1" ng-checked='state == 1' checked ng-click='radio(1)'>教师登录</label>
-        	<label><input type="radio" name="status" value="0" ng-checked='state == 0' ng-click='radio(0)'>学生登录</label>
-        </div>
         <button id="login" type="button" ng-class='{active:loginform.$valid}' ng-disabled="loginform.$invalid" ng-click = 'login()'>登录</button>
     </form>
     <script src='../../bower_components/angular/angular.min.js'></script>
