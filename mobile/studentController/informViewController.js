@@ -53,7 +53,7 @@ app.controller('informViewController', ['$scope', '$http', function($scope, $htt
                 }
             }
             // 点击显示详情
-            $scope.tipContent = function(num) {
+            $scope.tipContent = function(num) { 
                     var content = '我是' + num + '年详情';
                     alert(content);
                 }

@@ -7,4 +7,7 @@ app.controller('homeViewController',['$scope',function($scope){
 	$scope.par_btn = function(num){
 		$scope.work_st = num;
 	}
+	$scope.newHomework = function(){
+		location.href = '../code/addHome.html';
+	}
 }])

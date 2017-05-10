@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html ng-app='addHomeApp'>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title></title>
+    <link rel="stylesheet" href="../studentCss/global.css">
+    <link rel="stylesheet" type="text/css" href="../studentCss/reset.css">
+    <link rel="stylesheet" type="text/css" href="../teacherCss/addHome.css">
+</head>
+
+<body ng-controller='addHomeController'>
+    <h1>发布新作业</h1>
+    <div class="addQuestion" ng-show='addState==0'>
+       <h4>选择题</h4>
+        <div>
+            <span>题目：</span>
+            <input type="text" name="" ng-model='title'>
+        </div>
+        <div>
+           <p>选项：</p>
+           <span>A：</span> <input type="text" name="" ng-model='option1'>
+           <br>
+           <span>B：</span> <input type="text" name="" ng-model='option2'>
+           <br>
+           <span>C：</span> <input type="text" name="" ng-model='option3'>
+           <br>
+           <span>D：</span> <input type="text" name="" ng-model='option4'>
+           <br>
+           <button type="" ng-click='submit(0)'>添加</button>
+           <button type="" ng-click='cancel()'>取消</button>
+        </div>
+    </div>
+    <div class="addQuestion" ng-show='addState==1'>
+    	<h4>填空/简答/程序题</h4>
+        <span>题目：</span>
+        <input type="text" name="" ng-model='valData'>
+        <button type=""  ng-click='submit(1)'>添加</button>
+        <button type=""  ng-click='cancel()'>取消</button>
+    </div>
+    <div class="questionList">
+    	<span>一、选择题</span>
+    	<button type="" ng-click="addOp(0)">+添加</button>
+    	<ul>
+    		 <li ng-repeat = 'item in radioData' class="radio">
+                <p>{{$index+1}}、{{item.title}}</p>
+                <label for="" ng-repeat='item1 in item.option'>
+                    <input type="radio" name="an1"> 
+                    <span>{{item1}}</span>
+                </label>
+                <br>
+            </li>
+    	</ul>
+    </div>
+    <div class="questionList">
+    	<span>二、填空题</span>
+    	<button type="" ng-click="addOp(1)">+添加</button>
+    	<li ng-repeat='item in voidData' class="text">
+    		<span>{{$index+1}}.{{item}}</span>
+    		<input type="text" name="">
+    	</li>
+    </div>
+    <div class="questionList">
+    	<span>三、简答题</span>
+    	<button type="" ng-click="addOp(2)">+添加</button>
+    	<li ng-repeat='item in simpleData' class="text">
+    		<span>{{$index+1}}.{{item}}:</span>
+    		<textarea name=""></textarea>
+    	</li>
+    </div>
+    <div class="questionList">
+    	<span>四、程序题</span>
+    	<button type="" ng-click="addOp(3)">+添加</button>
+    	<p ng-repeat='item in programData'>{{$index+1}}.{{item}}。</p>
+    </div>
+     <div class="btnList">
+        <button type="" ng-click='release()'>发布</button>
+        <button type="" ng-click='exit()'>取消</button>
+    </div>
+    <script src='../teacherJs/flexible.debug.js'></script>
+    <script src='../../bower_components/angular/angular.min.js'></script>
+    <script src='../teacherJs/addHome.js'></script>
+</body>
+
+</html>
