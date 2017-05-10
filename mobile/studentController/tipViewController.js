@@ -54,9 +54,6 @@ app.controller('tipViewController', ['$scope', '$http', function($scope, $http) 
             $scope.ann_content = '作业通知';
             // $scope.ann_date = '2017-05-03';
 
-            $scope.showArr = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60];
-            $scope.countAll = $scope.showArr.length;
-            $scope.ann_date = $scope.showArr.slice(($scope.page-1)*16,($scope.page-1)*16+16);
             this.getData();
             this.events();
         },
@@ -69,35 +66,32 @@ app.controller('tipViewController', ['$scope', '$http', function($scope, $http) 
                     ann_type: $scope.ann_st
                 },
                 headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded'
-                    },
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
             }).then(function(res) {
-                console.log(res);
+                $scope.getData = res.data;
+                console.log($scope.getData);
                 // $scope.showData = res;
                
             })
         },
         // 事件
         events: function() {
-            // 点击显示详情
-            $scope.tipContent = function(num) {
-                    var content = '我是' + num + '年详情';
-                    alert(content);
-                }
-                // 类型切换
+            var that = this;
+            // 类型切换
             $scope.ann_tab = function(st) {
-            	// this.getData();
+            	that.getData();
                 $scope.ann_st = st;
-                if (st == 0) {
-                    $scope.ann_content = '作业通知';
-                    $scope.ann_date = '2017-05-03';
-                } else if (st == 1) {
-                    $scope.ann_content = '考试公告';
-                    $scope.ann_date = '2017-05-04';
-                } else {
-                    $scope.ann_content = '其他公告';
-                    $scope.ann_date = '2017-05-05';
-                }
+                // if (st == 0) {
+                //     $scope.ann_content = '作业通知';
+                //     $scope.ann_date = '2017-05-03';
+                // } else if (st == 1) {
+                //     $scope.ann_content = '考试公告';
+                //     $scope.ann_date = '2017-05-04';
+                // } else {
+                //     $scope.ann_content = '其他公告';
+                //     $scope.ann_date = '2017-05-05';
+                // }
             }
             // 分页
             // 点击按钮操作
@@ -110,6 +104,10 @@ app.controller('tipViewController', ['$scope', '$http', function($scope, $http) 
             	// this.getData();
             	$scope.ann_date = $scope.showArr.slice(($scope.page-1)*16,($scope.page-1)*16+16);
                 // alert($scope.page)
+            }
+            // 显示公告信息
+            $scope.showAnn = function(content){
+                alert(content);
             }
         }
     }

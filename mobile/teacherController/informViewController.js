@@ -12,7 +12,27 @@ app.controller('informViewController', ['$scope', '$http', function($scope, $htt
             $scope.ann_content = '作业通知';
             // $scope.ann_date = '2017-05-03';
 
-            $scope.showArr = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60];
+            $scope.showArr = [
+                {
+                    title:'本地存储有什么作用？',
+                    content:'HTML5 storage提供了一种方式让网站能够把信息存储到你本地的计算机上，并再以后需要的时候进行获取。这个概念和cookie相似，区别是它是为了更大容量存储设计的。',
+                    data:'2017-05-03'
+                },
+                {
+                    title:'写出1000以内的水仙花数的程序',
+                    content:'var i,a,b,c;\nfor(i=100;i<1000;i++){\na=parseInt(i/100);\nb=parseInt((i-a*100)/10);\nc=parseInt(i-a*100-b*10);\nif( a*a*a+b*b*b+c*c*c == i){\ndocument.write(i+"<br>");}}',
+                    data:'2017-05-02'
+                },
+                {
+                    title:'怎么判断闰年？',
+                    content:'function isLeapYear (Year) {\nif (((Year % 4)==0) && ((Year % 100)!=0) || ((Year % 400)==0)) {\nreturn (true);} else {\n return (false); }}',
+                    data:'2017-05-01'},
+                {
+                    title:'打印九九乘法表',
+                    content:'<script type="text/javascript">\n    document.write("<table>");   \n var str = "js九九乘法表";    \n.write("<h1>" + str + "</h1>");    \nfor ( var x = 1; x <= 9; x++) { \n       document.write("<tr>");   \n     for ( var y = 1; y <= x; y++) {    \n        document.write("<th>" + x + "*" + y + "=" + (x * y) + "</th>");        }      \n  document.write("</tr>");    }  \n  document.write("</table>");\n</script>',
+                    data:'2017-04-03'
+                }
+            ];
             $scope.countAll = $scope.showArr.length;
             $scope.ann_date = $scope.showArr.slice(($scope.page-1)*16,($scope.page-1)*16+16);
             // this.getData();
