@@ -13,22 +13,26 @@
     <link rel=" stylesheet" type="text/css" href="../studentCss/tip.css">
     <link rel=" stylesheet" type="text/css" href="../studentCss/me.css">
     <link rel="stylesheet" href="../studentCss/inform.css">
-   
+
 </head>
 
-<body>
+<body ng-controller='grayController'>
     <!-- <div class="preloader">刷新中...</div> -->
-    <div ui-view class="content"></div>
+    <div class="gray" >{{grayTip}}</div>
+    <div ui-view class="content">
+        
+    </div>
     <footer class="clear">
-        <li><a ui-sref="home" title="" ui-sref-active="active">作业</a></li>
-        <li><a ui-sref="homeWork" title="" ui-sref-active="active">公告</a></li>
-        <li><a ui-sref="inform" title="" ui-sref-active="active">答疑</a></li>
-        <li><a ui-sref="me" title="" ui-sref-active="active">我的</a></li>
+        <li style="border-left: 0.031rem dotted gray;"><a ui-sref="home" title="" ui-sref-active="active" class="iconfont" ng-click='grayBtn(0)'>&#xe604; 作业</a></li>
+        <li ng-click='grayBtn(1)'><a ui-sref="homeWork" title="" ui-sref-active="active" class="iconfont">&#xe600; 公告</a></li>
+        <li ng-click='grayBtn(2)'><a ui-sref="inform" title="" ui-sref-active="active" class="iconfont">&#xe61a; 答疑</a></li>
+        <li ng-click='grayBtn(3)'><a ui-sref="me" title="" ui-sref-active="active" class="iconfont">&#xe601; 我的</a></li>
     </footer>
 </body>
 <!-- <script src='../js/jquery-3.1.1.min.js'></script> -->
 <!-- <script src='../dest/main.js'></script> -->
 <!-- <script src='../js/idangerous.swiper.min.js'></script> -->
+<script src='../../bower_components/jquery/dist/jquery.min.js'></script>
 <script src='../../bower_components/angular/angular.min.js'></script>
 <script src='../../bower_components/angular-ui-router/release/angular-ui-router.min.js'></script>
 <script src='../js/ui-bootstrap-custom-2.4.0.min.js'></script>
@@ -39,6 +43,7 @@
 <script src='../studentController/meViewController.js'></script>
 <script src='../studentController/informViewController.js'></script>
 <script src='../studentController/tipViewController.js'></script>
+<script src='../js/config.js'></script>
 
 
 </html>

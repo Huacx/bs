@@ -11,6 +11,7 @@ app.controller('informViewController', ['$scope', '$http', function($scope, $htt
             $scope.ann_st = 0;
             $scope.ann_content = '作业通知';
             // $scope.ann_date = '2017-05-03';
+            $scope.grayTip = '答疑/统计界面';
 
             $scope.showArr = [
                 {

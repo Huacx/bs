@@ -3,17 +3,9 @@ app.controller('annController', ['$scope', '$http', function($scope, $http) {
     $scope.annTypeNum = 0;
     $scope.annType = function(num) {
         //0 作业选项
-        // if (num == 0) {
-        //     $scope.annTypeNum = num;
-        // }
         // //1 考试选项
-        // else if (num == 1) {
-        //     $scope.annTypeNum = num;
-        // }
         // //2 其他选项
-        // else {
-            $scope.annTypeNum = num;
-        // }
+        $scope.annTypeNum = num;
     }
     $scope.annSubmit = function() {
         alert($scope.annTypeNum + $scope.annTitle + $scope.annContent);
@@ -26,25 +18,36 @@ app.controller('annController', ['$scope', '$http', function($scope, $http) {
         // window.close();
     }
     $scope.annSubmit = function() {
-        $http({
-            url: 'http://ourworkmanager.cn/myine/announce.php',
-            method: 'get',
-            headers: {
-                'Content-Type' : 'application/x-www-form-urlencoded'
-            },
-            data: {
-                ann_type: $scope.annTypeNum,
-                ann_title: $scope.annTitle,
-                ann_content: $scope.annContent,
-                tea_number:'147258'
+        $.post('http://ourworkmanager.cn/myine/announce.php', { ann_title: $scope.annTitle, ann_content: $scope.annContent, tea_number: 'val2', ann_type: $scope.annTypeNum }, function(data, status) {
+            console.log(status);
+            console.log(data);
+            if(data.ann_status == 0){
+                alert('提交成功');
             }
-        }).then(function(res) {
-            console.log('类型: ' + $scope.annTypeNum);
-            console.log('标题: ' + $scope.annTitle);
-            console.log('内容: ' + $scope.annContent);
-            console.log('编号: ' + '147852');
-            console.log(res);
-        })
+            else{
+                alert('提交失败!!');
+            }
+        }, 'json');
+        // $http({
+        //     method: 'post',
+        //     url: 'http://ourworkmanager.cn/myine/announce.php',
+        //     headers: {
+        //         'Content-Type': 'application/x-www-form-urlencoded'
+        //     },
+        //     data: {
+        //         ann_type: $scope.annTypeNum,
+        //         ann_title: $scope.annTitle,
+        //         ann_content: $scope.annContent,
+        //         tea_number: '147258'
+        //     }
+        // }).then(function(res, t) {
+        //     console.log('类型: ' + $scope.annTypeNum);
+        //     console.log('标题: ' + $scope.annTitle);
+        //     console.log('内容: ' + $scope.annContent);
+        //     console.log('编号: ' + '147852');
+        //     console.log(res);
+        //     console.log(t);
+        // })
     }
     $scope.annCancel = function() {
         location.href = '../code/teacherIndex.html#!/homeWork'

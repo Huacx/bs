@@ -6,9 +6,9 @@
     </ul>
     <button type="" class='new_ann' ng-click='addAnn()'>发布新公告</button>
     <ul class='ann_content clear'>
-        <li ng-click='showAnn()' class="clear" ng-repeat = 'item in listData'>
-            <a href="" title="" ng-click='tipContent(item.content)'>{{item.title}}</a>
-            <span>{{item.data}}</span>
+       <li ng-repeat='item in getData' ng-click='showAnn(item.ann_content)' class="clear">
+            <a href="" title="">{{item.ann_title}}</a>
+            <span>{{item.ann_time}}</span>
         </li>
     </ul>
      <ul class="pageList clear" uib-pagination total-items="countAll" items-per-page='count' ng-model="page" boundary-links="true" max-size="maxSize" force-ellipses="true" previous-text="上一页" next-text="下一页" first-text="首页" last-text="尾页" ng-change="pageChanged()" id="pageChange">
