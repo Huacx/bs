@@ -38,7 +38,7 @@ app.controller('tipViewController', ['$scope', '$http', function($scope, $http) 
             //     $scope.listData = $scope.work_data;
             // })
             $.ajax({
-                url:'http://ourworkmanager.cn/myine/annshow.php',
+                url:'http://ourworkmanager.cn/myine/announce/annshow.php',
                 method:'post',
                 data:{
                     ann_type: $scope.ann_st

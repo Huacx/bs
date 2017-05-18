@@ -34,27 +34,50 @@ app.controller('informViewController', ['$scope', '$http', function($scope, $htt
                     data:'2017-04-03'
                 }
             ];
-            $scope.countAll = $scope.showArr.length;
-            $scope.ann_date = $scope.showArr.slice(($scope.page-1)*16,($scope.page-1)*16+16);
-            // this.getData();
+           
+            this.getData(0);
             this.events();
         },
         // 获取数据
-        // getData: function() {
-        //     $http({
-        //         method: 'post',
-        //         url: 'http://ourworkmanager.cn/myine/annshow.php',
-        //         data: {
-        //             ann_type: $scope.ann_st
-        //         }
-        //     }).then(function(res) {
-        //         console.log(res);
-        //         // $scope.showData = res;
-               
-        //     })
-        // },
+        getData: function(st) {
+            $http({
+                url: 'http://ourworkmanager.cn/myine/solve/showsolve.php',
+                method: 'post',
+                dataType:'json',
+                async:false
+            }).then(function(res) {
+                console.log(res);
+                // $scope.showData = res;
+                var data = null;
+                $scope.doArr = [];
+                $scope.didArr = [];
+                 
+                 for(var i = 0; i<res.data.length; i++){
+                    // 未答疑
+                    if(res.data[i].solution == undefined){
+                        $scope.doArr.push(res.data[i]);
+                    }
+                    // 已答疑
+                    else{
+                        $scope.didArr.push(res.data[i]);
+                    }
+                 }
+                 // console.log(doArr);
+                 // console.log(didArr);
+                 if(st==0){
+                     $scope.data = $scope.doArr;
+                 }
+                 else{
+                     $scope.data = $scope.didArr;
+
+                 }
+                 $scope.countAll = $scope.data.length;
+                 $scope.ann_date = $scope.data.slice(($scope.page-1)*15,($scope.page-1)*15+15);
+            })
+        },
         // 事件
         events: function() {
+            var that = this;
             // 添加疑问
             $scope.addInform = function(){
                 var question = prompt('请输入您的疑问：');
@@ -62,40 +85,49 @@ app.controller('informViewController', ['$scope', '$http', function($scope, $htt
                     alert('您没有输入问题，提问失败！！！');
                 }else{
                     alert('提问成功');
-                    // $http({
-                    //     url:'',
-                    //     method:'post',
-                    //     data:{
-                    //         question:question
-                    //     }
-                    // }).then{function(res){
-                    //     console.log(res);
-                    // }}
+                    $.ajax({
+                        url:'http://ourworkmanager.cn/myine/solve/addsolve.php',
+                        method:'post',
+                        data:{
+                            solve:question,
+                            username:localStorage.username
+                        },
+                        dataType:'json',
+                        async:false,
+                        success:function(res){
+                            console.log(res);
+                        },
+                        error:function(res){
+                            console.log(res);
+                        }
+                    })
+                    that.getData();
                 }
             }
             // 点击显示详情
-            $scope.showQuestion = function(content) { 
-                    alert(content);
-                }
+            $scope.showQuestion = function(data1,data2) { 
+                    // alert(content);
+                    console.log(data1)
+                    console.log(data2)
+                    if(data2 == undefined){
+                        alert('此题未解答!!');
+                    }else{
+                        var al = '';
+                        for(var i = 0; i<data2.length; i++){
+                            al +='答案'+i+'、'+ data2[i].solution + '\n'
+                        }
+                        alert(al);
+                    }
+            }
                 // 类型切换
             $scope.ann_tab = function(st) {
-            	// this.getData();
                 $scope.ann_st = st;
-                if (st == 0) {
-                    $scope.ann_content = '作业通知';
-                    $scope.ann_date = '2017-05-03';
-                } else if (st == 1) {
-                    $scope.ann_content = '考试公告';
-                    $scope.ann_date = '2017-05-04';
-                } else {
-                    $scope.ann_content = '其他公告';
-                    $scope.ann_date = '2017-05-05';
-                }
+            	that.getData(st);
             }
             // 分页
             $scope.pageChanged = function(res) {
             	console.log($scope.ann_date);
-            	$scope.ann_date = $scope.showArr.slice(($scope.page-1)*16,($scope.page-1)*16+16);
+            	$scope.ann_date = $scope.data.slice(($scope.page-1)*15,($scope.page-1)*15+15);
             }
         }
     }

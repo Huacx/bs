@@ -1,37 +1,52 @@
 .state {
-	width: 4rem;
-	text-align: center;
-	margin: 0.5rem auto;
+    width: 4rem;
+    text-align: center;
+    margin: 0.5rem auto;
     li {
         font-size: 0.5rem;
         padding: 0.1rem 0.2rem;
         border: 0.031rem solid black;
-		float: left;
-		border-radius: 0.094rem;
-		&.start{
-			border-right: none;
-		}
-		&.active{
-			color: red;
-			border-color: red;
-		}
+        float: left;
+        border-radius: 0.094rem;
+        &.start {
+            border-right: none;
+        }
+        &.active {
+            color: red;
+            border-color: red;
+        }
     }
 }
-.table-content{
-	li{
-		padding: 0.0rem 0.8rem;
-		h4{
-			font-size: 0.562rem;
-			font-weight: bold;
-			span{
-				padding-right: 0.156rem;
-			}
-		}
-		ul{
-			li{
-				font-size: 0.5rem;
-			}
-		}
-	}
-}
 
+.table-content {
+    float: left;
+    li {
+        padding: 0.0rem 0.5rem;
+        .pro {
+            li {
+                h1 {
+                    font-size: 0.5rem;
+                    font-weight: bold;
+                }
+                .zhang {
+                    li {
+                        padding-left:1.5rem;
+                        h4 {
+                            padding-left: 1.5rem;
+                            font-size: 0.438rem;
+                            // font-weight: bold;
+                            span {
+                                padding-right: 0.156rem;
+                            }
+                        }
+                        .jie {
+                            li {
+                                font-size: 0.438rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

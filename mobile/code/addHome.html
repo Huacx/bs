@@ -9,14 +9,29 @@
     <link rel="stylesheet" type="text/css" href="../studentCss/reset.css">
     <link rel="stylesheet" type="text/css" href="../teacherCss/addHome.css">
 </head>
-
-<body ng-controller='addHomeController'>
+<body ng-controller='addHomeController' style="border:none">
     <h1>发布新作业</h1>
+    <div>
+        <span>输入科目：</span>
+        <input type="text" name="" ng-model='pro'>
+    </div>
+    <div>
+        <span>输入章次：</span>
+        <input type="text" name="" ng-model='zhang'>
+    </div>
+    <div>
+        <span>输入节次：</span>
+        <input type="text" name="" ng-model='jie'>
+    </div>
     <div class="addQuestion" ng-show='addState==0'>
        <h4>选择题</h4>
         <div>
             <span>题目：</span>
             <input type="text" name="" ng-model='title'>
+        </div>
+        <div>
+            <span>答案：</span>
+            <input type="text" ng-model='answer' name="">
         </div>
         <div>
            <p>选项：</p>
@@ -36,6 +51,10 @@
     	<h4>填空/简答/程序题</h4>
         <span>题目：</span>
         <input type="text" name="" ng-model='valData'>
+        <div>
+            <span>答案：</span>
+            <input type="text" ng-model='answer' name="">
+        </div>
         <button type=""  ng-click='submit(1)'>添加</button>
         <button type=""  ng-click='cancel()'>取消</button>
     </div>
@@ -79,6 +98,7 @@
         <button type="" ng-click='exit()'>取消</button>
     </div>
     <script src='../teacherJs/flexible.debug.js'></script>
+    <script src='../../bower_components/jquery/dist/jquery.min.js'></script>
     <script src='../../bower_components/angular/angular.min.js'></script>
     <script src='../teacherJs/addHome.js'></script>
 </body>

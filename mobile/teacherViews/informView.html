@@ -4,10 +4,10 @@
         <li ng-class='{true:"active",false:""}[ann_st==1]' ng-click='ann_tab(1)'>统计</li>
     </ul>
     <ul class='ann_content clear'>
-         <li ng-repeat='item in ann_date' ng-click='showQuestion(item.content)'  class="clear">
-            <a href="" title="">{{item.title}}</a>
-            <span>{{item.data}}</span>
-            <span class="dealQuestion" ng-click='dealQuestion()'>答疑</span>
+        <li ng-repeat='item in ann_date' ng-click='showQuestion(item.solve_id,item.solution)'  class="clear">
+            <a href="" title="">{{item.solveinfo}}</a>
+            <span>{{item.solv_time}}</span>
+            <span class="dealQuestion" ng-click='dealQuestion(item.solve_id)'>答疑</span>
         </li>
     </ul>
      <ul class="pageList clear" uib-pagination total-items="countAll" items-per-page='count' ng-model="page" boundary-links="true" max-size="maxSize" force-ellipses="true" previous-text="上一页" next-text="下一页" first-text="首页" last-text="尾页" ng-change="pageChanged()" id="pageChange">

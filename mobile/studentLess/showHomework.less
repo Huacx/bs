@@ -1,12 +1,22 @@
+body{
+    width: 100%;
+    // padding-left: 0.312rem;
+    box-sizing: border-box;
+
 .list {
-    padding: 0.8rem;
+    width: 100%;
+    // margin-left: 0.8rem;
+    box-sizing: border-box;
     h3 {
+        padding:0 0 0 0.8rem;
         font-size: 0.562rem;
         font-weight: bold;
     }
     .radioList {
+        // padding:0 0 0 0.8rem;
     	margin-bottom: 0.156rem;
         padding-left: 0.625rem;
+        box-sizing: border-box;
         .answerList {
             li {
                 p {
@@ -25,7 +35,10 @@
         }
     }
     .voidList {
+        // padding:0 0 0 0.8rem;
+        padding-left: 0.625rem;
     	margin-bottom: 0.156rem;
+        box-sizing: border-box;
         ul {
             li {
                 p {
@@ -40,7 +53,12 @@
         }
     }
     .answerList{
-    	margin-bottom: 0.156rem;
+    	margin-bottom: 0.156rem  0 0;
+        //padding-left: 0.625rem;
+        box-sizing: border-box;
+        // padding:0 0 0 0.8rem;
+        width:90%;
+        margin:0 auto;
     	ul{
     		li{
     			p{
@@ -54,6 +72,11 @@
     	}
     }
     .proList{
+        // padding:0 0 0 0.8rem;
+        box-sizing: border-box;
+        width:90%;
+        margin:0 auto;
+        //padding-left: 0.625rem;
     	p{
     		font-size: 0.438rem;
     		line-height: 0.8rem;
@@ -64,7 +87,11 @@
     	}
     }
     .btnList{
+        // padding:0  0 0 0.8rem;
+        //padding-left: 0.625rem;
         margin-top: 0.312rem;
+        width:90%;
+        margin:0 auto;
         button{
             width: 2.5rem;
             height: 0.8rem;
@@ -75,4 +102,15 @@
             font-size: 0.5rem;
         }
     }
+}
+.answer{
+    padding-left: 0.625rem;
+    h2{
+        font-size: 0.5rem;
+    }
+    p{
+        padding-left: 0.312rem;
+        font-size: 0.438rem;
+    }
+}
 }

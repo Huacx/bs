@@ -1,14 +1,13 @@
 <div id="inform" ng-controler='informViewController'>
     <ul class="ann_title clear">
-        <li ng-class='{true:"active",false:""}[ann_st==0]' ng-click='ann_tab(0)'>答疑</li>
-        <li ng-class='{true:"active",false:""}[ann_st==1]' ng-click='ann_tab(1)'>统计</li>
+        <li ng-class='{true:"active",false:""}[ann_st==0]' ng-click='ann_tab(0)'>未答疑</li>
+        <li ng-class='{true:"active",false:""}[ann_st==1]' ng-click='ann_tab(1)'>已答疑</li>
     </ul>
     <button type="" class='new_iform' ng-click='addInform()'>我有疑问</button>
     <ul class='ann_content clear'>
-        <li ng-repeat='item in ann_date' ng-click='showQuestion(item.content)'  class="clear">
-
-            <a href="" title="">{{item.title}}</a>
-            <span>{{item.data}}</span>
+        <li ng-repeat='item in ann_date' ng-click='showQuestion(item.solve_id,item.solution)'  class="clear">
+            <a href="" title="">{{item.solveinfo}}</a>
+            <span>{{item.solv_time}}</span>
         </li>
     </ul>
      <ul class="pageList clear" uib-pagination total-items="countAll" items-per-page='count' ng-model="page" boundary-links="true" max-size="maxSize" force-ellipses="true" previous-text="上一页" next-text="下一页" first-text="首页" last-text="尾页" ng-change="pageChanged()" id="pageChange">

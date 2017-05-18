@@ -87,8 +87,6 @@ app.controller('loginController', ['$scope', '$http', function($scope, $http) {
                         alert('登陆失败');
                         return;
                     }
-                }, function(res) {
-                    // console.log(res);
                 });
                 if ($scope.remVal) {
                     localStorage.username = $scope.username;

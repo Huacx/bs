@@ -18,24 +18,8 @@ app.controller('tipViewController', ['$scope', '$http', function($scope, $http) 
         },
         // 获取数据
         getData: function() {
-            // $http({
-            //     method: 'post',
-            //     url: 'http://ourworkmanager.cn/myine/annshow.php',
-            //     data: {
-            //         ann_type: $scope.ann_st
-            //     },
-            //     headers: {
-            //         'Content-Type': 'application/x-www-form-urlencoded'
-            //     },
-            // }).then(function(res) {
-            //     console.log(res);
-            //     $scope.getData = res.data;
-            //     console.log($scope.getData);
-            //     // $scope.showData = res;
-            // });
-            // $scope.getData = null;
             $.ajax({
-                url:'http://ourworkmanager.cn/myine/annshow.php',
+                url:'http://ourworkmanager.cn/myine/announce/annshow.php',
                 method:'post',
                 data:{
                     ann_type: $scope.ann_st
@@ -54,7 +38,7 @@ app.controller('tipViewController', ['$scope', '$http', function($scope, $http) 
             // 类型切换
             $scope.ann_tab = function(st) {
                     $scope.ann_st = st;
-                    console.log(st);
+                    //console.log(st);
                     that.getData();
                 }
                 // 分页

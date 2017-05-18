@@ -3,10 +3,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"> 
     <title></title>
-    <link rel="stylesheet" href="../studentCss/global.css">
     <link rel="stylesheet" type="text/css" href="../studentCss/reset.css">
+    <!-- <link rel="stylesheet" href="../studentCss/global.css"> -->
     <link rel="stylesheet" type="text/css" href="../studentCss/showHomework.css">
 </head>
 
@@ -18,19 +18,37 @@
                 <li>
                     <p>1:以下哪条语句会产生运行错误：</p>
                     <label for="">
-                        <input type="radio" name="an1"> var obj = ()
+                        <input type="radio" name="an1" value="A"> var obj = ()
                     </label>
                     <br>
                     <label for="">
-                        <input type="radio" name="an1"> var obj = []
+                        <input type="radio" name="an1" value="B"> var obj = []
                     </label>
                     <br>
                     <label for="">
-                        <input type="radio" name="an1"> var obj = {}
+                        <input type="radio" name="an1" value="C"> var obj = {}
                     </label>
                     <br>
                     <label for="">
-                        <input type="radio" name="an1"> var obj = ''
+                        <input type="radio" name="an1"  value="D"> var obj = ''
+                    </label>
+                </li>
+                <li>
+                    <p>1:以下哪条语句会产生运行错误：</p>
+                    <label for="">
+                        <input type="radio" name="an11" value="A"> var obj = ()
+                    </label>
+                    <br>
+                    <label for="">
+                        <input type="radio" name="an11" value="B"> var obj = []
+                    </label>
+                    <br>
+                    <label for="">
+                        <input type="radio" name="an11" value="C"> var obj = {}
+                    </label>
+                    <br>
+                    <label for="">
+                        <input type="radio" name="an11"  value="D"> var obj = ''
                     </label>
                 </li>
             </ul>
@@ -39,6 +57,10 @@
         <h3>二、填空题</h3>
         <li class="voidList">
             <ul>
+                <li>
+                    <p>1、Linux系统通过命令给其他用户发消息?</p>
+                    <input type="text" name="">
+                </li>
                 <li>
                     <p>1、Linux系统通过命令给其他用户发消息?</p>
                     <input type="text" name="">
@@ -53,6 +75,10 @@
                     <p>1、说明localstorage和sessionStorage的区别。</p>
                     <textarea name=""></textarea>
                 </li>
+                <li>
+                    <p>1、说明localstorage和sessionStorage的区别。</p>
+                    <textarea name=""></textarea>
+                </li>
             </ul>
         </li>
         
@@ -60,14 +86,22 @@
         <li class="proList">
             <p>1、打印1000以内的水仙花数。</p>
             <p>2、打印2000年以内的闰年。</p>
-            <input type="file" name="">
+            <input type="file" name="" ng-model='file'>
         </li>
         <div class="btnList">
             <button type="" class="submit" ng-click='submit()'>提交</button>
             <button type="" class="cancel" ng-click='cancel()'>退出</button>
         </div>
     </ul>
+    <div class="answer">
+        <h2>答案：</h2>
+        <p>选择题:{{}}</p>        
+        <p>填空题:{{}}</p>        
+        <p>简答题:{{}}</p>        
+        <p>程序题:{{}}</p>        
+    </div>
    <script src='../studentJs/flexible.debug.js'></script>
+   <script src='../../bower_components/jquery/dist/jquery.min.js'></script>
    <script src='../../bower_components/angular/angular.min.js'></script>
    <script src='../studentJs/showHomework.js'></script>
 </body>
