@@ -18,19 +18,27 @@ app.controller('homeViewController',['$scope',function($scope){
 	$scope.show_work = function(){
 		location.href = '../code/homework.html';
 	}
-	var homeView = {
+	var home = {
 		init:function(){
-			// this.getData();
+			this.getData();
 		},
-		// getData:function(){
-		// 	$.ajax({
-		// 		url:'',
-		// 		data:{},
-		// 		method:'post',
-		// 		success:function(res){}
-		// 	})
-		// },
+		getData:function(){
+			$.ajax({
+				url:'http://ourworkmanager.cn/myine/homework/getworklist.php',
+				method:'post',
+				data:{
+					username:"201307104103",
+					usertype:'0'
+				},
+				dataType:'json',
+				async:false,
+				success:function(res){
+					console.log(res);
+				}
+			})
+		},
 		events:function(){}
+
 	}
-	homeView.init();
+	home.init();
 }])

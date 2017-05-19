@@ -25,16 +25,7 @@ app.controller('addHomeController', ['$scope', '$http', function($scope, $http) 
                 // 新作业类型选项
             $scope.submit = function(num) {
                     // 选择
-                     //     "1": {
-                            //         "question": "52161",
-                            //         "type": "15216",
-                            //         "selction1": "126152",
-                            //         "selction2": "1526",
-                            //         "answer": "231",
-                            //         "option": {
-                            //         "1": "1", "2": "2", "3": "3", "4": "4" 
-                            //     }
-                            //     }
+                     
                     if ($scope.type == 0) {
                         var obj = {
                             title: $scope.title,
@@ -130,7 +121,7 @@ app.controller('addHomeController', ['$scope', '$http', function($scope, $http) 
                         method: 'post',
                         data: {
                             subject: $scope.pro,
-                            writer: $scope.username,
+                            writer: '147258',
                             ques:$scope.question
                         },
                         success: function(res) {

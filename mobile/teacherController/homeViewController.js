@@ -34,7 +34,7 @@ app.controller('homeViewController',['$scope',function($scope){
 				method:'post',
 				data:{
 					username:"201307104103",
-					usertype:'1'
+					usertype:1
 				},
 				dataType:'json',
 				async:false,
