@@ -6,23 +6,23 @@ app.controller('homeViewController',['$scope',function($scope){
 	$scope.tab =function(n){
 		$scope.st = n;
 	}
-	$scope.sub1 = function(){
-		$scope.os = !$scope.os;
-	}
-	$scope.sub2 = function(){
-		$scope.js = !$scope.js;
-	}
+	
 	$scope.par_btn = function(num){
 		$scope.work_st = num;
 	}
 	$scope.show_work = function(){
-		location.href = '../code/homework.html';
+		var url = '../code/homework.html?'+$scope.st;
+		alert(url);
+		location.href = url;
 	}
 	var home = {
 		init:function(){
 			this.getData();
 		},
 		getData:function(){
+			var pro = [];
+			var zhang = [];
+			var jie = [];
 			$.ajax({
 				url:'http://ourworkmanager.cn/myine/homework/getworklist.php',
 				method:'post',
@@ -34,6 +34,11 @@ app.controller('homeViewController',['$scope',function($scope){
 				async:false,
 				success:function(res){
 					console.log(res);
+					for(var i = 0; i<res.length; i++){
+						if(res[i].section1 == '第一章'){
+
+						}
+					}
 				}
 			})
 		},
