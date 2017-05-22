@@ -3,6 +3,10 @@
         <li ng-class='{true:"active",false:""}[ann_st==0]' ng-click='ann_tab(0)'>未答疑</li>
         <li ng-class='{true:"active",false:""}[ann_st==1]' ng-click='ann_tab(1)'>已答疑</li>
     </ul>
+    <div class="search">
+        <input type="text" placeholder="请输入关键字" name="">
+        <button type="" ng-click='search()'>搜索</button>
+    </div>
     <ul class='ann_content clear'>
         <li ng-repeat='item in ann_date' ng-click='showQuestion(item.solve_id,item.solution)'  class="clear">
             <a href="" title="">{{item.solveinfo}}</a>

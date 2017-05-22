@@ -25,7 +25,6 @@ app.controller('addHomeController', ['$scope', '$http', function($scope, $http) 
                 // 新作业类型选项
             $scope.submit = function(num) {
                     // 选择
-                     
                     if ($scope.type == 0) {
                         var obj = {
                             title: $scope.title,
@@ -42,7 +41,7 @@ app.controller('addHomeController', ['$scope', '$http', function($scope, $http) 
                         	type: 1,  //题型
                             selction1: $scope.zhang, //章
                             selction2: $scope.jie,  //节
-                            answer: "201307104103",  //作者
+                            answer: $scope.answer,  //答案
                             option: { //选项
                              1: $scope.option1,
                              2: $scope.option2,
@@ -64,7 +63,7 @@ app.controller('addHomeController', ['$scope', '$http', function($scope, $http) 
                         	type: 2,  //题型
                             selction1: $scope.zhang, //章
                             selction2: $scope.jie,  //节
-                            answer: "201307104103" //作者
+                            answer: $scope.answer //答案
                         }
                         console.log($scope.question);
                         $scope.i ++;
@@ -80,7 +79,7 @@ app.controller('addHomeController', ['$scope', '$http', function($scope, $http) 
                         	type: 3,  //题型
                             selction1: $scope.zhang, //章
                             selction2: $scope.jie,  //节
-                            answer: "201307104103"
+                            answer: $scope.answer
                         }
                         console.log($scope.question);
                         $scope.i ++;
@@ -95,7 +94,7 @@ app.controller('addHomeController', ['$scope', '$http', function($scope, $http) 
                         	type: 4,  //题型
                             selction1: $scope.zhang, //章
                             selction2: $scope.jie,  //节
-                            answer: "201307104103"
+                            answer: $scope.answer
                         }
                         console.log($scope.question);
                         $scope.i ++;
@@ -126,6 +125,7 @@ app.controller('addHomeController', ['$scope', '$http', function($scope, $http) 
                         },
                         success: function(res) {
                             console.log(res);
+                            console.log($scope.question);
                         }
                     })
                 //     location.href = '../code/teacherIndex.html#!/home';

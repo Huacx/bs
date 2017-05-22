@@ -4,6 +4,10 @@
         <li ng-class='{true:"active",false:""}[ann_st==1]' ng-click='ann_tab(1)'>考试</li>
         <li ng-class='{true:"active",false:""}[ann_st==2]' ng-click='ann_tab(2)'>其他</li>
     </ul>
+    <div class="search">
+        <input type="text" placeholder="请输入关键字" ng-model='searchVal' name="">
+        <button type="" ng-click='searchAnn()'>搜索</button>
+    </div>
     <ul class='ann_content clear'>
         <li ng-repeat='item in getData' ng-click='showAnn(item.ann_content)' class="clear">
             <a href="" title="">{{item.ann_title}}</a>

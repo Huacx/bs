@@ -66,8 +66,8 @@ app.controller('loginController', ['$scope', '$http', function($scope, $http) {
                     }
                 });
                 promise.then(function(res) {
-                    console.log(res);
                     var data = res.data;
+                    console.log(res.data.status);
                     //*用户登录状态表示 0：表示登录成功，1：表示密码错误，
                     // 2： 用户名不存在， - 1： 用户名密码不为空
                     if (data.status == 0) {
@@ -77,10 +77,10 @@ app.controller('loginController', ['$scope', '$http', function($scope, $http) {
                         } else { //教师界面
                             location.href = '../code/teacherIndex.html'
                         }
-                    } else if (data == 1) {
+                    } else if (data.status == 1) {
                         alert('用户名或密码错误');
                         return;
-                    } else if (data == 2) {
+                    } else if (data.status == 2) {
                         alert('用户名不存在');
                         return;
                     } else {
@@ -88,13 +88,6 @@ app.controller('loginController', ['$scope', '$http', function($scope, $http) {
                         return;
                     }
                 });
-                if ($scope.remVal) {
-                    localStorage.username = $scope.username;
-                    localStorage.password = $scope.password;
-                }
-            }
-            $scope.remember = function() {
-                $scope.remVal = !$scope.remVal;
             }
         }
     }

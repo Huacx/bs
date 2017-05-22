@@ -19,7 +19,7 @@ app.controller('homeViewController',['$scope',function($scope){
 		$scope.work_st = num;
 	}
 	$scope.show_work = function(){
-		location.href = '../code/homework.html';
+		location.href = '../code/homework2.html';
 	}
 	$scope.newHomework = function(){
 		location.href = '../code/addHome.html';

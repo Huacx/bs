@@ -51,6 +51,17 @@ app.controller('tipViewController', ['$scope', '$http', function($scope, $http) 
             $scope.showAnn = function(content) {
                 alert(content);
             }
+            $scope.searchAnn = function(){
+                that.getData();
+                var newArr = [];
+                for(var i = 0; i<$scope.getData.length; i++){
+                    if($scope.getData[i].ann_content.indexOf($scope.searchVal) >= 0){
+                        newArr.push($scope.getData[i]);
+                    }
+                }
+                console.log( newArr );
+                $scope.getData = newArr;
+            }
         }
     }
     ann.init();

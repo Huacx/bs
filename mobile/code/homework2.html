@@ -30,25 +30,7 @@
                     </label>
                     <br>
                     <label for="">
-                        <input type="radio" name="an1"  value="D"> var obj = ''
-                    </label>
-                </li>
-                <li>
-                    <p>1:以下哪条语句会产生运行错误：</p>
-                    <label for="">
-                        <input type="radio" name="an11" value="A"> var obj = ()
-                    </label>
-                    <br>
-                    <label for="">
-                        <input type="radio" name="an11" value="B"> var obj = []
-                    </label>
-                    <br>
-                    <label for="">
-                        <input type="radio" name="an11" value="C"> var obj = {}
-                    </label>
-                    <br>
-                    <label for="">
-                        <input type="radio" name="an11"  value="D"> var obj = ''
+                        <input type="radio" checked name="an1"  value="D"> var obj = ; 
                     </label>
                 </li>
             </ul>
@@ -59,11 +41,11 @@
             <ul>
                 <li>
                     <p>1、Linux系统通过命令给其他用户发消息?</p>
-                    <input type="text" name="">
+                    <input type="text" name="" value='答案1'>
                 </li>
                 <li>
                     <p>1、Linux系统通过命令给其他用户发消息?</p>
-                    <input type="text" name="">
+                    <input type="text" name="" value='答案2'>
                 </li>
             </ul>
         </li>
@@ -73,11 +55,11 @@
             <ul>
                 <li>
                     <p>1、说明localstorage和sessionStorage的区别。</p>
-                    <textarea name=""></textarea>
+                    <textarea name="">'一个是永久存储，一个临时存储'</textarea>
                 </li>
                 <li>
                     <p>1、说明localstorage和sessionStorage的区别。</p>
-                    <textarea name=""></textarea>
+                    <textarea name="">'一个是永久存储，一个临时存储'</textarea>
                 </li>
             </ul>
         </li>
@@ -93,13 +75,17 @@
             <button type="" class="cancel" ng-click='cancel()'>退出</button>
         </div>
     </ul>
-    <div class="answer">
+    <div>
+        <span>得分：</span>
+        <input type="text" name="">
+    </div>
+    <!-- <div class="answer">
         <h2>答案：</h2>
         <p>选择题:{{}}</p>        
         <p>填空题:{{}}</p>        
         <p>简答题:{{}}</p>        
         <p>程序题:{{}}</p>        
-    </div>
+    </div> -->
    <script src='../studentJs/flexible.debug.js'></script>
    <script src='../../bower_components/jquery/dist/jquery.min.js'></script>
    <script src='../../bower_components/angular/angular.min.js'></script>

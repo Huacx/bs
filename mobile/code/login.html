@@ -28,9 +28,6 @@
                 <div class="error-tip" ng-show='loginform.password.$dirty && loginform.password.$error.minlength'>请输入大于六位的密码</div>
             </div>
         </div>
-        <div class="remember">
-        	<label><input type="checkbox" id="rememberMe" ng-checked='remVal' ng-click='remember()'>记住我</label>
-        </div>
         <button id="login" type="button" ng-class='{active:loginform.$valid}' ng-disabled="loginform.$invalid" ng-click = 'login()'>登录</button>
     </form>
     <script src='../../bower_components/angular/angular.min.js'></script>
